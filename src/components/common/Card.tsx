@@ -30,7 +30,7 @@ export default function Card( prop: Props) {
                     )}
                 </div>
 
-                <div className={`p-2  rounded-sm -translate-y-8`}>
+                <div className={`p-2  rounded-sm `}>
                     {/* {prop.icon} */}
                     <img src="/wallet.png" alt="wallet" width={60} height={60} className=' '/>
                 </div>
