@@ -317,8 +317,8 @@ export default function Payout() {
                             </div>
 
                             <div className=' h-full flex items-center justify-center w-fit'>
-                                <div className={`p-2 w-fit h-fit bg-yellow-600 rounded-sm`}>
-                                    <Wallet size={25}/>
+                                <div className={`p-2 w-fit h-fit  rounded-sm`}>
+                                   <img src="/wallet.png" alt="wallet" width={60} height={60} />
                                 </div>
                             </div>
 
@@ -334,9 +334,12 @@ export default function Payout() {
                             </div>
 
                             <div className=' h-full flex items-center justify-center w-fit'>
-                                <div className={`p-2 w-fit h-fit bg-yellow-600 rounded-sm`}>
-                                    <Wallet size={25}/>
+                                <div className={`p-2 w-fit h-fit  rounded-sm`}>
+                                    {/* <Wallet size={25}/> */}
+                                   <img src="/wallet.png" alt="wallet" width={60} height={60} />
+
                                 </div>
+
                             </div>
 
                         </div>

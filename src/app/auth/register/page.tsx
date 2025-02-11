@@ -180,7 +180,7 @@ export default function page() {
                         <Button className=' w-full rounded-full'>Login</Button>
                     </div>
 
-                   <p className=' text-xs text-center mt-8'>Already have an account?<a href="/auth/login" className=' text-yellow-400'>Log in</a></p>
+                   {/* <p className=' text-xs text-center mt-8'>Already have an account?<a href="/auth/login" className=' text-yellow-400'>Log in</a></p> */}
 
                 </form>
 

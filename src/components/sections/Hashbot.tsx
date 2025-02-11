@@ -36,7 +36,7 @@ export default function Hashbot() {
   return (
     <section id='hashbot' className=' w-full flex flex-col  gap-4 items-center justify-center py-20'>
     
-      <h2 className="~text-xl/3xl font-bold">
+      <h2 className="~text-xl/3xl font-bold text-yellow-500">
        Our Hash Bot
       </h2>
 
@@ -59,11 +59,11 @@ export default function Hashbot() {
 
                     <p className=' ~text-sm/xl font-semibold mt-4'>Profit</p>
 
-                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: Php {bots[0].topup}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: Php {bots[0].min}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: Php {bots[0].max}</p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: <span className=' text-yellow-400'>Php {bots[0].topup.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: <span className=' text-yellow-400'>Php {bots[0].min.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: <span className=' text-yellow-400'>Php {bots[0].max.toLocaleString()}</span></p>
                     <p className=' text-zinc-300 ~text-xs/lg'>ROI: In just {bots[0].duration} days </p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Total income of: 20% {bots[0].profit}</p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Total income of: {bots[0].profit}%</p>
                 </div>
 
                 </div>
@@ -82,37 +82,16 @@ export default function Hashbot() {
 
                     <p className=' ~text-sm/xl font-semibold mt-4'>Profit</p>
 
-                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: Php {bots[1].topup}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: Php {bots[1].min}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: Php {bots[1].max}</p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: <span className=' text-yellow-400'>Php {bots[1].topup.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: <span className=' text-yellow-400'>Php {bots[1].min.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: <span className=' text-yellow-400'>Php {bots[1].max.toLocaleString()}</span></p>
                     <p className=' text-zinc-300 ~text-xs/lg'>ROI: In just {bots[1].duration} days </p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Total income of: 20% {bots[1].profit}</p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Total income of:{bots[1].profit}%</p>
                 </div>
 
                 </div>
             </CarouselItem>
 
-            {/* <CarouselItem className=' hidden md:flex items-end justify-end overflow-visible'>
-              <div className=' w-full flex flex-col md:flex-row gap-6 bg-zinc-900 p-4 md:p-10'>
-
-                <div className=' flex flex-col gap-1'>
-                    <p className=' ~text-lg/2xl font-semibold text-yellow-400'>{bots[1].name}</p>
-                    <p className=' ~text-xs/lg text-zinc-400'>{bots[1].description}</p>
-
-                    <p className=' ~text-sm/xl font-semibold mt-4'>Profit</p>
-
-                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: Php {bots[1].topup}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: Php {bots[1].min}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: Php {bots[1].max}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>ROI: In just {bots[1].duration} days </p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Total income of: 20% {bots[1].profit}</p>
-                </div>
-
-                <div className=' relative w-full md:w-[800px] bg-zinc-800 md:bg-none flex items-center justify-center'>
-                    <img src={bots[1].img} alt="hashbot" width={900} height={900}  className=' w-[100px] md:absolute md:w-full bottom-0'/>
-                </div>
-              </div>
-            </CarouselItem> */}
 
             <CarouselItem className=' flex items-end justify-end overflow-visible'>
             <div className='  h-[470px] w-full flex flex-col md:flex-row gap-6 bg-zinc-900 p-4 md:p-10'>
@@ -127,9 +106,9 @@ export default function Hashbot() {
 
                     <p className=' ~text-sm/xl font-semibold mt-4'>Profit</p>
 
-                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: Php {bots[2].topup}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: Php {bots[2].min}</p>
-                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: Php {bots[2].max}</p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Top Up: <span className=' text-yellow-400'>Php {bots[2].topup.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Minimum: <span className=' text-yellow-400'>Php {bots[2].min.toLocaleString()}</span></p>
+                    <p className=' text-zinc-300 ~text-xs/lg'>Maximum: <span className=' text-yellow-400'>Php {bots[2].max.toLocaleString()}</span></p>
                     <p className=' text-zinc-300 ~text-xs/lg'>ROI: In just {bots[2].duration} days </p>
                     <p className=' text-zinc-300 ~text-xs/lg'>Total income of: 20% {bots[2].profit}</p>
                 </div>

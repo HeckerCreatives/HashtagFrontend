@@ -14,7 +14,7 @@ type Props ={
 export default function Card( prop: Props) {
   return (
     <div className=' w-[336px] flex flex-col justify-between flex-grow-1 h-[150px] bg-zinc-900 p-3'>
-            <div className=' w-full grid grid-cols-[1fr_50px]  rounded-sm'>
+            <div className=' w-full grid grid-cols-[1fr_70px]  rounded-sm'>
                
                 <div className=' w-full flex flex-col gap-2 items-start text-zinc-100 py-2'>
                     <p className=' text-xs'>{prop.title}</p>
@@ -30,9 +30,9 @@ export default function Card( prop: Props) {
                     )}
                 </div>
 
-                <div className={`p-2 w-fit h-fit bg-yellow-600 rounded-sm -translate-y-8`}>
-                    {prop.icon}
-
+                <div className={`p-2  rounded-sm -translate-y-8`}>
+                    {/* {prop.icon} */}
+                    <img src="/wallet.png" alt="wallet" width={60} height={60} className=' '/>
                 </div>
             </div>
 
