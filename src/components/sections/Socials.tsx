@@ -49,22 +49,22 @@ export default function Socials() {
                 >
                 <FaSquareFacebook size={40}className=' group-hover:scale-125 transition-all duration-200'/>
                 </motion.a>
-                <motion.a href="" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+                <motion.a href="http://facebook.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
                 variants={itemVariants}
                 >
                 <FaTelegram size={40}className=' group-hover:scale-125 transition-all duration-200'/>
                 </motion.a>
-                <motion.a href="" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+                <motion.a href="http://telegram.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
                 variants={itemVariants}
                 >
                 <AiFillInstagram size={40} className=' group-hover:scale-125 transition-all duration-200'/>
                 </motion.a>
-                <motion.a href="" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+                <motion.a href="http://instagram.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
                 variants={itemVariants}
                 >
                 <FaDiscord size={40} className=' group-hover:scale-125 transition-all duration-200'/>
                 </motion.a>
-                <motion.a href="" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+                <motion.a href="http://discord.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
                 variants={itemVariants}
                 >
                 <FaSquareXTwitter size={40} className=' group-hover:scale-125 transition-all duration-200'/>
