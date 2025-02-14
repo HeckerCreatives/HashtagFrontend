@@ -50,9 +50,19 @@ export default function Hero() {
 
     </div> */}
 
-    <img src="/assets/herotitle.svg" alt="" className=' w-[90%] md:w-[70%] ~mt-16/40'/>
+    <motion.img 
+     initial={{ opacity: 0, y: 20 }} 
+     whileInView={{ opacity: 1, y: 0 }}
+     transition={{ duration: 0.8, ease: "easeOut" }} 
+     viewport={{ once: false, amount: 0.2 }}
+    src="/assets/herotitle.svg" alt="" className=' w-[90%] md:w-[70%] ~mt-16/40'/>
 
-    <div className=' relative w-[85%] h-auto flex items-center justify-center ~mt-16/52'>
+    <motion.div 
+    initial={{ opacity: 0, y: 20 }} 
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut", delay: .3}} 
+    viewport={{ once: false, amount: 0.2 }}
+    className=' relative w-[85%] h-auto flex items-center justify-center ~mt-16/52'>
       <img src="/assets/Frame.png" alt="frame" />
 
       <div className=' absolute flex items-center justify-between w-full h-full'>
@@ -70,7 +80,7 @@ export default function Hero() {
 
         </div>
       </div>
-    </div>
+    </motion.div>
 
     <h2 className=' ~text-xs/2xl font-bold -translate-y-6'><span className=' text-yellow-500'>HASH</span>BOT</h2>
    

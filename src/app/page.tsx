@@ -10,6 +10,8 @@ export default function Home() {
   return (
     <main className=" h-full w-full flex flex-col justify-center items-center overflow-x-hidden ">
 
+      
+
       <div className=" w-full h-auto flex flex-col items-center justify-center relative">
          <video 
             autoPlay 
