@@ -55,7 +55,7 @@ export default function Hashbot() {
   return (
     <section id='hashbot' className=' w-full flex flex-col  gap-4 items-center justify-center py-20'>
     
-    <motion.h2
+    {/* <motion.h2
       className="text-xl md:text-3xl font-bold text-yellow-500"
       initial={{ opacity: 0, y: 20 }} 
       whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function Hashbot() {
       viewport={{ once: false, amount: 0.2 }}
     >
       <span className="text-white">Our</span> Hash Bot
-    </motion.h2>
+    </motion.h2> */}
 
         <Carousel className='  w-full overflow-visible'
        
