@@ -106,16 +106,31 @@ export default function page() {
   return (
     <main className=" h-full w-full flex flex-col justify-center items-center overflow-x-hidden ">
           
-          <div className=" max-w-[1440px] w-full h-full px-4 flex flex-col gap-8">
-            <Navigation/>
-          </div>
-    
-         <div className=' relative p-4 h-[85vh] w-full flex items-center justify-center'
-            style={{backgroundImage:"url(/assets/techno.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}
-         >
-            <div className=" w-full h-full bg-zinc-950/50 absolute">
+       
 
-            </div>
+        <div className=" w-full h-auto flex flex-col items-center justify-center relative">
+                           <video 
+                              autoPlay 
+                              loop 
+                              muted 
+                              playsInline 
+                              className="absolute z-0 top-0 left-0 w-full h-full object-cover"
+                            >
+                              <source src="/assets/Home BGLoop.mp4" type="video/mp4" />
+                            </video>
+                  
+                            <div className=" w-full h-full absolute bg-zinc-950/80 z-10">
+                  
+                            </div>
+                            <div className=" relative z-20 w-full h-[80px] flex items-center justify-center border-b-2 border-yellow-500 bg-zinc-950/90 py-2">
+                              <Navigation/>
+                  
+                            </div>
+                  
+                          <div className=" relative max-w-[1440px] w-full h-full px-4 flex flex-col gap-8">
+                            
+                          <div className=' relative p-4 h-[85vh] w-full flex items-center justify-center'>
+          
             <div className=' relative z-20 w-full max-w-[800px] h-auto bg-zinc-900 grid grid-cols-1 md:grid-cols-2 p-10 place-items-center shadow-md'>
 
                 <form onSubmit={handleSubmit(onSubmit)} className=' w-full max-w-[360px] flex flex-col gap-1 items-center justify-center '>
@@ -194,6 +209,11 @@ export default function page() {
             
 
          </div>
+                  
+                          </div>
+        </div>
+    
+         
     
           <Footer/>
     

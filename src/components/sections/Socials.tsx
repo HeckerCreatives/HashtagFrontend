@@ -25,7 +25,7 @@ const containerVariants = {
 
 export default function Socials() {
   return (
-    <section id='socialmedia' className=' w-full flex flex-col  gap-8 items-center justify-center py-16'>
+    <section id='socialmedia' className=' w-full flex flex-col  gap-8 items-center justify-center py-16 bg-zinc-900'>
    
         <div className=' flex flex-col items-center justify-center gap-12'>
             <motion.h1 className=" ~text-xl/3xl font-bold text-center"

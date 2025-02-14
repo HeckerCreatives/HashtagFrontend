@@ -16,8 +16,12 @@ export default function Footer() {
   const [activeTab, setActiveTab] = useState("terms")
 
   return (
-    <footer className=' w-full flex  items-center justify-center bg-zinc-900 '>
-        <div className=' w-full  max-w-[1440px] flex flex-col gap-8 md:flex-row items-center justify-between py-6'>
+    <footer className=' relative w-full flex  items-center justify-center bg-zinc-950 border-t-2 border-yellow-500 '>
+
+      <div className=' hidden lg:block footerclip w-[30%] h-full bg-zinc-900 absolute left-0 z-0'>
+
+      </div>
+        <div className=' relative z-10 w-full  max-w-[1440px] flex flex-col gap-8 md:flex-row items-center justify-between py-4'>
             <a href="/">
             <img src="/assets/Logo.png" alt="logo" width={100} height={100}/></a>
 

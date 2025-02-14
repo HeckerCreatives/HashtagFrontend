@@ -109,4 +109,15 @@ body {
     -webkit-text-fill-color: white !important; /* Change text color if needed */
     transition: background-color 5000s ease-in-out 0s;
   }
+
+
+  .clip-path {
+    clip-path: polygon(10% 0, 88% 0, 100% 46%, 88% 100%, 10% 100%, 0% 50%);
+  }
+
+  .footerclip{
+    clip-path: polygon(0 0, 83% 0, 100% 100%, 44% 100%, 0 100%, 0% 50%);
+
+  }
+  
   
