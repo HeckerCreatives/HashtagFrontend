@@ -20,7 +20,7 @@ export default function Home() {
             playsInline 
             className="absolute z-0 top-0 left-0 w-full h-full object-cover"
           >
-            <source src="/assets/Home BGLoop.mp4" type="video/mp4" />
+            <source src="/assets/Home BGloop.mp4" type="video/mp4" />
           </video>
 
           <div className=" w-full h-full absolute bg-zinc-950/80 z-10">
@@ -39,15 +39,6 @@ export default function Home() {
       </div>
       
       
-
-      <div className=" relative w-full h-auto flex items-center justify-center"
-       style={{backgroundImage:"url(/assets/techno.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}
-      >
-        
-        <div className=" w-full h-full bg-zinc-950/50 absolute">
-
-        </div>
-      </div>
       <div className=" max-w-[1440px] w-full h-full px-4 flex flex-col gap-8 mb-8">
         <Hashbot/>
         <FAQ/>

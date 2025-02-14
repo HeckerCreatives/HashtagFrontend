@@ -71,7 +71,7 @@ export default function Hero() {
 
         </div>
         <div className=' w-full h-full flex items-center justify-center'>
-        <img src="/assets/logo.png" alt="robot" width={220} height={220} className=' ~w-16/60' />
+        <img src="/assets/Logo.png" alt="robot" width={220} height={220} className=' ~w-16/60' />
 
         </div>
 

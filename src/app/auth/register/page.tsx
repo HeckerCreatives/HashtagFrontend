@@ -116,7 +116,7 @@ export default function page() {
                               playsInline 
                               className="absolute z-0 top-0 left-0 w-full h-full object-cover"
                             >
-                              <source src="/assets/Home BGLoop.mp4" type="video/mp4" />
+                              <source src="/assets/Home BGloop.mp4" type="video/mp4" />
                             </video>
                   
                             <div className=" w-full h-full absolute bg-zinc-950/80 z-10">
