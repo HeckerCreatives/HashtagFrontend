@@ -107,7 +107,7 @@ export default function Inventory() {
                         )}
                     />
                   </TableCell>
-                  <TableCell className=' text-center'>{item.type === 'quick_miner' && 'Quick Miner' || item.type === 'rapid_lane' && 'Rapid Miner' || item.type === 'swift_lane' && 'Swift Miner'}</TableCell>
+                  <TableCell className=' text-center'>{item.type}</TableCell>
                 </TableRow>
               ))}
                 
