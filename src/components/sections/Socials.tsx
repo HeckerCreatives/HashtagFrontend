@@ -1,11 +1,13 @@
 'use client'
-import React from 'react'
-import { FaSquareFacebook } from "react-icons/fa6";
+import React, { useEffect, useState } from 'react'
+import { FaSquareFacebook, FaXTwitter } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { motion } from 'motion/react';
+import axios from 'axios';
+import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -21,9 +23,50 @@ const containerVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  
+interface List {
+  _id: string,
+  link: string,
+  title: string,
+}
   
 
 export default function Socials() {
+  const [list, setList] = useState<List[]>([])
+  
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/sociallinks/getsociallinkslp`,{
+        withCredentials:true
+        })
+
+        setList(response.data.data)
+        
+      } catch (error) {
+        
+    }
+  }
+    getData()
+},[])
+
+const icon = (data: string) => {
+  if(data === 'facebook'){
+    return <Facebook size={40}/>
+  }else if(data === 'discord'){
+    return  <FaDiscord size={40} />
+  }else if(data === 'x'){
+    return  <FaXTwitter size={40}/>
+  }else if(data === 'instagram'){
+    return  <Instagram size={40}/>
+  }else if(data === 'telegram'){
+    return  <FaTelegram  size={40}/>
+  } else {
+    return  <Youtube size={40}/>
+
+  }
+}
   return (
     <section id='socialmedia' className=' w-full flex flex-col  gap-8 items-center justify-center py-16 bg-zinc-900'>
    
@@ -44,12 +87,16 @@ export default function Socials() {
              viewport={{ once: false, amount: 0.2 }}
             >
 
-                <motion.a href="" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
-                variants={itemVariants}
-                >
-                <FaSquareFacebook size={40}className=' group-hover:scale-125 transition-all duration-200'/>
-                </motion.a>
-                <motion.a href="http://facebook.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+              {list.map((item, index) => (
+                 <a key={index} href={item.link} className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
+                 >
+                  {icon(item.title)}
+                 {/* <FaSquareFacebook size={40}className=' group-hover:scale-125 transition-all duration-200'/> */}
+                 </a>
+              ))}
+
+               
+                {/* <motion.a href="http://facebook.com" className=' py-6 px-20 text-yellow-400 border border-zinc-700 bg-zinc-900 group'
                 variants={itemVariants}
                 >
                 <FaTelegram size={40}className=' group-hover:scale-125 transition-all duration-200'/>
@@ -68,7 +115,7 @@ export default function Socials() {
                 variants={itemVariants}
                 >
                 <FaSquareXTwitter size={40} className=' group-hover:scale-125 transition-all duration-200'/>
-                </motion.a>
+                </motion.a> */}
 
 
             </motion.div>

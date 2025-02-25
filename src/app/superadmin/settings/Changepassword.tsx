@@ -85,7 +85,7 @@ export default function Changepassword() {
   }
 
   return (
-    <div className=' w-full max-w-[1440px] flex flex-col'>
+    <div className=' w-full max-w-[400px] flex flex-col'>
         <div className=' flex flex-col max-w-[500px] w-full h-auto bg-zinc-900 rounded-sm p-6 shadow-lg'>
             <p className=' text-sm font-semibold'>Change Password</p>
 

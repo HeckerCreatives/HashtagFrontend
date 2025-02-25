@@ -52,9 +52,19 @@ export const changepasswordsuperadmin = z.object({
     path: ['confirmpasswordsuperadmin'], // Error will appear under confirmpassword field
   });
 
+  export const socialsSchema = z.object({
+    type: z.string().nonempty('Select a type'),
+    link: z.string()
+        .refine((value) => value.startsWith('https://'), {
+            message: "Link must start with 'https://'", 
+        }),
+});
+
 export type Register = z.infer<typeof registeruser>;
 export type RequestPayout = z.infer<typeof payout>
 export type CreateAdmin = z.infer<typeof createAdmin>
 export type ChangePasswordAdmin = z.infer<typeof changepasswordadmin>
 export type Payin = z.infer<typeof payin>
 export type ChangePasswordSuperadmin = z.infer<typeof changepasswordsuperadmin>
+export type AddSocialMedia = z.infer<typeof socialsSchema>;
+
