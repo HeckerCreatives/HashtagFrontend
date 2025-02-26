@@ -35,7 +35,7 @@ export function Chart() {
         </SelectTrigger>
         <SelectContent className=" bg-zinc-800">
           <SelectItem value="payin">Payin</SelectItem>
-          <SelectItem value="comission">Comission</SelectItem>
+          <SelectItem value="comission">Commission</SelectItem>
           <SelectItem value="minerpurchased">Hash Bot Purchased</SelectItem>
           <SelectItem value="minerpayout">Hash Bot Payout</SelectItem>
           <SelectItem value="unilevelpayout">Unilevel Payout</SelectItem>

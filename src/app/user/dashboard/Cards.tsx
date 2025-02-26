@@ -110,7 +110,7 @@ export default function Cards() {
 
 
   return (
-    <div className=' max-w-[1440px] h-auto w-full flex flex-wrap gap-8 mt-6'>
+    <div className=' max-w-[1740px] h-auto w-full flex flex-wrap gap-8 mt-6'>
 
         <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Top Up Balance'} amount={`${wallets?.data.creditwallet.toLocaleString()}`} subtitle={'Use to purchase hash bot set up'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Withdrawables'} amount={`${withdrawables.toLocaleString()}`} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={loading}/>
@@ -118,7 +118,7 @@ export default function Cards() {
         <Card icon={<Wallet size={30} />} iconbg={' bg-blue-500'} title={'Hash Bot Wallet'} amount={`${wallets?.data.minecoinwallet.toLocaleString()}`} subtitle={'Unclaimed Hash Bot Value'} text={`₱ ${unclaimed.toLocaleString()}`} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Referral Total Commission'} amount={`${earnings?.data.referral.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${earnings?.data.unilevel.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Comission Wallet'} amount={`${wallets?.data.commissionwallet.toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Commission Wallet'} amount={`${wallets?.data.commissionwallet.toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Profits'} amount={`${totalearnings.toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
 
     </div>

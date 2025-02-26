@@ -49,7 +49,7 @@ export function LineCharts() {
   const [type, setType] = useState('daily')
   const params = useSearchParams()
   const graph = params.get('state')
-  const title = graph === 'payin' && 'Payin' || graph === 'comission' && 'Comission' || graph === 'minerpurchased' && 'Rig Miner Purchased' || graph === 'minerpayout' && 'Rig Miner Payout' || graph === 'unilevelpayout' && 'Unilevel Payout'
+  const title = graph === 'payin' && 'Payin' || graph === 'comission' && 'Commission' || graph === 'minerpurchased' && 'Rig Miner Purchased' || graph === 'minerpayout' && 'Rig Miner Payout' || graph === 'unilevelpayout' && 'Unilevel Payout'
 
   const apiRoute = graph === 'payin' && 'getpayingraphadmin' || graph === 'comission' && 'getcommissiongraphadmin' || graph === 'minerpurchased' && 'getminerbuygraphadmin' || graph === 'minerpayout' && 'getminerpayoutgraphadmin' || graph === 'unilevelpayout' && 'getunilevelpayoutgraphadmin'
 

@@ -26,7 +26,7 @@ export function Chart() {
 
   
   return (
-    <div className=" flex flex-col gap-4 w-full max-w-[1440px]  mt-16">
+    <div className=" flex flex-col gap-4 w-full max-w-[1740px]  mt-16">
       <div className=" w-full">
         <Select value={graph} onValueChange={setGraph}>
         <SelectTrigger className=" w-[200px] bg-zinc-800">
@@ -34,7 +34,7 @@ export function Chart() {
         </SelectTrigger>
         <SelectContent className=" bg-zinc-800">
           <SelectItem value="payin">Payin</SelectItem>
-          <SelectItem value="comission">Comission</SelectItem>
+          <SelectItem value="comission">Commission</SelectItem>
           <SelectItem value="minerpurchased">Hash Bot Purchased</SelectItem>
           <SelectItem value="minerpayout">Hash Bot Payout</SelectItem>
           <SelectItem value="unilevelpayout">Unilevel Payout</SelectItem>
@@ -42,7 +42,7 @@ export function Chart() {
       </Select>
 
       </div>
-      <div className=" w-full max-w-[1440px] grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className=" w-full max-w-[1740px] grid grid-cols-1 md:grid-cols-2 gap-8">
         <LineCharts/>
         <SalesTable/>
       </div>

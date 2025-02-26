@@ -125,7 +125,7 @@ export default function page() {
         <div className=" bg-zinc-950 w-full h-full flex flex-col items-center gap-12 p-8">
            
 
-           <div className=' w-full max-w-[1440px] flex items-center flex-wrap gap-4'>
+           <div className=' w-full max-w-[1740px] flex items-center flex-wrap gap-4'>
             <HashbotCard id={micro?.id || ''} name={'Micro Hash'} profit={(micro?.profit || 0) * 100} duration={micro?.duration || 0} img={'/assets/micro op2.png'} size={'140'} max={micro?.max || 0} min={micro?.min || 0} isBuyonetakeone={micro?.isBuyonetakeone || ''}/>
             <HashbotCard id={mega?.id || ''} name={'Mega Hash'} profit={(mega?.profit || 0) * 100} duration={mega?.duration || 0} img={'/assets/mega opt2.png'} size={'120'} max={mega?.max || 0} min={mega?.min || 0} isBuyonetakeone={mega?.isBuyonetakeone || ''}/>
             <HashbotCard id={giga?.id || ''} name={'Giga Hash'} profit={(giga?.profit || 0) * 100} duration={giga?.duration || 0} img={'/assets/giga opt2.png'} size={'110'} max={giga?.max || 0} min={giga?.min || 0} isBuyonetakeone={giga?.isBuyonetakeone || ''}/>

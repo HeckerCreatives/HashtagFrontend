@@ -60,7 +60,7 @@ export default function SalesTable() {
 
 
   return (
-    <div className=' relative w-full max-w-[1440px] flex flex-col items-center gap-8 mt-4 bg-zinc-900 p-6'>
+    <div className=' relative w-full max-w-[1740px] flex flex-col items-center gap-8 mt-4 bg-zinc-900 p-6'>
         <div className=' flex md:flex-row flex-col gap-4 items-center justify-between absolute z-20 top-0 w-[98%] h-auto bg-gradient-to-r from-yellow-700 to-yellow-500 p-2 rounded-sm -translate-y-4'>
             <p className=' text-sm font-semibold'>Sales</p>
 

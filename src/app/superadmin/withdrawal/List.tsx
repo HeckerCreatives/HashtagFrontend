@@ -10,7 +10,7 @@ import Hashbothistory from './Hashbothistory'
 
 export default function List() {
   return (
-    <div className=' max-w-[1440px] w-full bg-zinc-900 p-2 md:p-6'>
+    <div className=' max-w-[1740px] w-full bg-zinc-900 p-2 md:p-6'>
         <Tabs defaultValue="comission" className=" w-full">
         <TabsList>
             <TabsTrigger value="comission">Commission</TabsTrigger>

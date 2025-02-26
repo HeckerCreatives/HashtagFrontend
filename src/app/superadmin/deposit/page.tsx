@@ -7,7 +7,7 @@ export default function page() {
   return (
     <SuperAdminLayout>
         <div className=" bg-zinc-950 w-full h-full flex items-start justify-center p-8">
-          <div className=' max-w-[1440px] w-full flex lg:flex-row flex-col gap-8 '>
+          <div className=' max-w-[1740px] w-full flex lg:flex-row flex-col gap-8 '>
           <Deposit/>
           <UserTable/>
           </div>

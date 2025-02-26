@@ -123,7 +123,7 @@ export default function Deposit() {
 
   
   return (
-    <div className=' max-w-[400px] h-auto p-6 w-full bg-zinc-900 rounded-sm flex flex-col'>
+    <div className=' max-w-[400px] h-fit p-6 w-full bg-zinc-900 rounded-sm flex flex-col'>
         <p className=' text-sm font-semibold mb-4'>Payin</p>
         <form onSubmit={handleSubmit(payinUser)} action="" className=' relative z-30 w-full flex flex-col gap-1 text-sm'>
           <div className=' group ' onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>

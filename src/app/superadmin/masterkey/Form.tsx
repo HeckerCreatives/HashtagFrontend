@@ -76,7 +76,7 @@ export default function Form() {
 
 
   return (
-    <div className=' w-full max-w-[1440px] flex'>
+    <div className=' w-full max-w-[1740px] flex'>
         <div className=' flex flex-col gap-1 bg-zinc-900 max-w-[500px] w-full h-auto p-6 lg:p-10 rounded-md'>
             <label htmlFor="" className=' text-xs text-zinc-400'>Master key</label>
             <Input value={key} onChange={(e) => setKey(e.target.value)} type="text" placeholder='Enter master key' className=' text-sm p-2 rounded-md ' />

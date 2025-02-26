@@ -217,7 +217,7 @@ export default function Payout() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1440px] h-auto bg-zinc-900 p-4 md:p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1740px] h-auto bg-zinc-900 p-4 md:p-6'>
         {/* <div className=' flex items-center justify-between absolute top-0 w-[98%] bg-gradient-to-r from-green-700 to-green-500 p-2 rounded-sm -translate-y-4'>
             <Select value={type} onValueChange={setType}>
             <SelectTrigger className="w-[200px] bg-zinc-900">
@@ -236,7 +236,7 @@ export default function Payout() {
         <div className=' flex items-start w-full'>
             <Tabs value={type} onValueChange={setType} defaultValue="commissionwallet" className="w-[400px]">
             <TabsList>
-                <TabsTrigger value="commissionwallet">Payout Comission</TabsTrigger>
+                <TabsTrigger value="commissionwallet">Payout Commission</TabsTrigger>
                 <TabsTrigger value="minecoinwallet">Payout Hash Bot</TabsTrigger>
             </TabsList>
             
@@ -312,7 +312,7 @@ export default function Payout() {
                         <>
                         <div className=' flex items-center justify-center gap-8'>
                             <div className=' flex flex-col gap-2'>
-                                 <p className=' text-sm'>Comission Wallet Balance</p>
+                                 <p className=' text-sm'>Commission Wallet Balance</p>
                                  <p className=' text-2xl font-semibold text-yellow-500'>₱ {wallet?.commissionwallet.toLocaleString()}</p>
                             </div>
 

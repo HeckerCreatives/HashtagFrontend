@@ -34,7 +34,7 @@ export default function Product() {
 
 
   return (
-    <div className=' w-full max-w-[1440px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12'>
+    <div className=' w-full max-w-[1740px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12'>
         <Productcard name={micro?.name || 'Micro Hash'} percentage={`${(micro?.profit || 0) * 100}`} duration={`${micro?.duration}`} min={micro?.min || 0} max={micro?.max || 0} img={'/assets/micro op2.png'} size={'160'} b1t1={micro?.isBuyonetakeone || ''}/>
         <Productcard name={mega?.name || 'Mega Hash'} percentage={`${(mega?.profit || 0) * 100}`} duration={`${mega?.duration}`} min={mega?.min || 0} max={mega?.max || 0} img={'/assets/mega opt2.png'} size={'160'} b1t1={mega?.isBuyonetakeone || ''}/>
         <Productcard name={giga?.name || 'Giga Hash'} percentage={`${(giga?.profit || 0) * 100}`} duration={`${giga?.duration}`} min={giga?.min || 0} max={giga?.max || 0} img={'/assets/giga opt2.png'} size={'160'} b1t1={giga?.isBuyonetakeone || ''}/>

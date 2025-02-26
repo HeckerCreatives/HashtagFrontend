@@ -64,7 +64,7 @@ export default function MasterkeyHistory() {
   }
   
   return (
-    <div className=' w-full max-w-[1440px] flex flex-col gap-6 bg-zinc-900 p-6 rounded-md'>
+    <div className=' w-full max-w-[1740px] flex flex-col gap-6 bg-zinc-900 p-6 rounded-md'>
         <p className=' text-sm'>Master Key History</p>
         <Table className=''>
          {loading === true && (

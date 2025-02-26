@@ -287,7 +287,7 @@ export default function UserTable() {
   }
 
   return (
-    <div className=' relative w-full flex flex-col items-center max-w-[1440px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
+    <div className=' relative w-full flex flex-col items-center max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
         <div className=' flex md:flex-row flex-col gap-4 items-center justify-between sticky top-0 w-[98%] bg-gradient-to-r from-yellow-700 to-yellow-500 p-2 rounded-sm -translate-y-12'>
             <Select value={status} onValueChange={setStatus}>
             <SelectTrigger className="w-[200px] bg-zinc-900">

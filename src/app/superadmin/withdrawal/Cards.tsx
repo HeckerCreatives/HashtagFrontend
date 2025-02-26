@@ -40,7 +40,7 @@ export default function Cards() {
     getWallets()
   },[])
   return (
-    <div className=' max-w-[1440px] h-auto w-full flex flex-wrap gap-8 mt-6'>
+    <div className=' max-w-[1740px] h-auto w-full flex flex-wrap gap-8 mt-6'>
 
 
     <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Total Request Commission'} amount={`${total?.totalrequestcommission.toLocaleString()}`} subtitle={'User Total Request Commission'} text={''} loading={loading}/>

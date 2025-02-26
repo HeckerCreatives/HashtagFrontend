@@ -13,7 +13,7 @@ export default function page() {
     <SuperAdminLayout>
         <div className=" bg-zinc-950 w-full h-full flex flex-col items-center p-8">
 
-          <Tabs defaultValue="admin" className=" w-full bg-zinc-900 p-2 md:p-6 max-w-[1440px] rounded-sm">
+          <Tabs defaultValue="admin" className=" w-full bg-zinc-900 p-2 md:p-6 max-w-[1740px] rounded-sm">
             <TabsList className=' bg-zinc-800'>
               <TabsTrigger value="admin">Admins</TabsTrigger>
               <TabsTrigger value="user">Users</TabsTrigger>

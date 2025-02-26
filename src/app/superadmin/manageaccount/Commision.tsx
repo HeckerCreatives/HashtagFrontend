@@ -77,7 +77,7 @@ export default function CommissionTable() {
 
 
   return (
-    <div className=' relative w-full flex flex-col items-center max-w-[1440px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
+    <div className=' relative w-full flex flex-col items-center max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
        <div className=' flex flex-col gap-1 items-start w-full'>
         <p className=' text-xs text-slate-500'>Filter by date:</p>
 

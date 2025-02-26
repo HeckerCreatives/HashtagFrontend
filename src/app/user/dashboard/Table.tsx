@@ -137,7 +137,7 @@ export default function DashboardTable() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1440px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
         {/* <div className=' absolute top-0 w-[98%] bg-gradient-to-r from-green-700 to-green-500 p-2 rounded-sm -translate-y-4'>
             <Select value={tab} onValueChange={setTab}>
             <SelectTrigger className="w-[200px] bg-zinc-900">
@@ -157,8 +157,8 @@ export default function DashboardTable() {
         <div className=' w-full flex items-start'>
           <Tabs value={tab} onValueChange={setTab} defaultValue="commissionwallet" className=" lg:flex hidden">
             <TabsList>
-              <TabsTrigger value="commissionwallet">Comission Wallet History</TabsTrigger>
-              <TabsTrigger value="directcommissionwallet">Direct Comission Wallet History</TabsTrigger>
+              <TabsTrigger value="commissionwallet">Commission Wallet History</TabsTrigger>
+              <TabsTrigger value="directcommissionwallet">Direct Commission Wallet History</TabsTrigger>
               <TabsTrigger value="minecoinwallet">Hash Bot Wallet History</TabsTrigger>
               <TabsTrigger value="creditwallet">Credit Wallet History</TabsTrigger>
             </TabsList>
@@ -170,8 +170,8 @@ export default function DashboardTable() {
                 <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="commissionwallet">Comission Wallet History</SelectItem>
-                <SelectItem value="directcommissionwallet">Direct Comission Wallet History</SelectItem>
+                <SelectItem value="commissionwallet">Commission Wallet History</SelectItem>
+                <SelectItem value="directcommissionwallet">Direct Commission Wallet History</SelectItem>
                 <SelectItem value="minecoinwallet">Miner Wallet History</SelectItem>
                 <SelectItem value="creditwallet">Credit Wallet History</SelectItem>
             </SelectContent>
