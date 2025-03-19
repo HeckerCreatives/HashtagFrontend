@@ -37,8 +37,8 @@ export default function HashbotCard( prop: Props) {
     const [slider, setSlider] = useState(0)
     const [duration, setDuration] = useState(0)
     const [profit, setProfit] = useState(0)
-    const [min, setMin] = useState(0)
-    const [max, setMax] = useState(0)
+    const [min, setMin] = useState<number | null>(null);
+    const [max, setMax] = useState<number | null>(null);
     const [b1t1, setB1t1] = useState(false)
     const [isChecked, setIsChecked] = useState(false);
     
@@ -136,11 +136,32 @@ export default function HashbotCard( prop: Props) {
                     <label htmlFor="" className=' mt-2 text-xs'>Duration (days)</label>
                     <Input value={duration} onChange={(e) => setDuration(e.target.valueAsNumber)}  placeholder='Duration' type="number" className=' p-3  rounded-sm text-xs'/>
 
-                    <label htmlFor="" className=' mt-2 text-xs'>Min</label>
-                    <Input value={min} onChange={(e) => setMin(e.target.valueAsNumber)}  placeholder='Duration' type="number" className=' p-3  rounded-sm text-xs'/>
+                    <label htmlFor="min" className="mt-2 text-xs">Min</label>
+                      <Input
+                        id="min"
+                        value={min !== null ? min.toLocaleString() : ""}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/,/g, ""); // Remove commas before parsing
+                          setMin(value ? Number(value) : null); // Set to null if empty
+                        }}
+                        placeholder="Duration"
+                        type="text" // Use text to allow formatted display
+                        className="p-3 rounded-sm text-xs"
+                      />
 
-                    <label htmlFor="" className=' mt-2 text-xs'>Max</label>
-                    <Input value={max} onChange={(e) => setMax(e.target.valueAsNumber)}  placeholder='Duration' type="number" className=' p-3  rounded-sm text-xs'/>
+                      <label htmlFor="max" className="mt-2 text-xs">Max</label>
+                      <Input
+                        id="max"
+                        value={max !== null ? max.toLocaleString() : ""}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/,/g, ""); // Remove commas before parsing
+                          setMax(value ? Number(value) : null); // Set to null if empty
+                        }}
+                        placeholder="Duration"
+                        type="text" // Use text to allow formatted display
+                        className="p-3 rounded-sm text-xs"
+                      />
+
 
                     <Button onClick={editComplan} disabled={loading} className=' bg-yellow-600 text-white w-fit mt-2 flex items-center justify-center gap-2'>
                     {loading === true && ( <div className='spinner'></div>)}

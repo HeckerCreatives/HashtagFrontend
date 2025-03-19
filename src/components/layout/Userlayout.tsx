@@ -122,7 +122,7 @@ export default function UserLayout({
       <div className=" min-h-screen w-full flex flex-col overflow-hidden">
        
         <div className=" relative h-screen flex flex-col items-center overflow-y-auto">
-          <header className=" max-w-[1740px] w-full sticky top-0 z-50 flex h-14 border-b-[1px] border-zinc-900 bg-zinc-950 items-center justify-between gap-4 bg-secondary p-4 lg:h-[74px] lg:px-6">
+          <header className=" max-w-[1920px] w-full sticky top-0 z-50 flex h-14 border-b-[1px] border-zinc-900 bg-zinc-950 items-center justify-between gap-4 bg-secondary p-4 lg:h-[74px] lg:px-6">
             <div className=' flex items-center gap-4 h-[74px]'>
               <Sheet>
                 <SheetTrigger asChild className=' lg:hidden block'>
@@ -201,7 +201,7 @@ export default function UserLayout({
 
             
           </header>
-          <div className=" bg-zinc-950 z-50 sticky top-[74px] max-w-[1740px] w-full hidden lg:block py-2 border-b-[1px] border-zinc-800">
+          <div className=" bg-zinc-950 z-50 sticky top-[74px] max-w-[1920px] w-full hidden lg:block py-2 border-b-[1px] border-zinc-800">
            <nav className=" flex items-center gap-4 px-2 text-sm font-medium lg:px-4 py-2">
 
             {user.map((item, index) => (

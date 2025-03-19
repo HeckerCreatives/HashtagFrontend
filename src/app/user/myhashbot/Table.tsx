@@ -48,7 +48,7 @@ export default function ClaimHistoryTable() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1920px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
             <p className=' w-full text-start text-sm text-white font-semibold'>Claim History</p>
         
         <Table className=' mt-8'>

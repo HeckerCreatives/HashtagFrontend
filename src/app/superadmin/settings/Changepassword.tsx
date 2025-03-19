@@ -117,7 +117,7 @@ export default function Changepassword() {
                 {errors.confirmpasswordsuperadmin && <p className=' text-[.7em] text-red-400'>{errors.confirmpasswordsuperadmin.message}</p>}
 
 
-                <Button className=' px-6 py-2 text-sm text-white font-semibold rounded-sm bg-yellow-600 w-fit mt-6 flex items-center justify-center gap-2'>
+                <Button className=' px-6 py-2 text-sm text-white font-semibold rounded-sm bg-yellow-600 w-fit mt-4 flex items-center justify-center gap-2'>
                     {loading === true && (
                     <Spinner/>
                     )}

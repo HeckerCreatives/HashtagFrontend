@@ -110,7 +110,7 @@ export default function Cards() {
 
 
   return (
-    <div className=' max-w-[1740px] h-auto w-full flex flex-wrap gap-8 mt-6'>
+    <div className=' max-w-[1920px] h-auto w-full flex flex-wrap gap-8 mt-6'>
 
         <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Top Up Balance'} amount={`${wallets?.data.creditwallet.toLocaleString()}`} subtitle={'Use to purchase hash bot set up'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Withdrawables'} amount={`${withdrawables.toLocaleString()}`} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={loading}/>

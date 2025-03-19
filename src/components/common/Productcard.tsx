@@ -148,7 +148,7 @@ export default function Productcard( prop: Props) {
 
                 <div className=' w-full p-2 bg-zinc-800 rounded-sm flex flex-wrap gap-1 items-center'>
                     <label htmlFor="" className=' text-xs text-zinc-400 w-[100px]'>Input amount:</label>
-                    <Input type="text" min={prop.min} max={prop.max} defaultValue={prop.min} value={val[0]} onChange={(e) => setVal([Number(e.target.value)])}  placeholder='Input ammount here' className=' text-sm p-2 rounded-md '/>
+                    <Input type="number" min={prop.min} max={prop.max} defaultValue={prop.min} value={val[0]} onChange={(e) => setVal([Number(e.target.value)])}  placeholder='Input ammount here' className=' text-sm p-2 rounded-md '/>
                 </div>
 
                 <div className=' w-full p-2 bg-zinc-800 rounded-sm flex flex-wrap gap-1 items-center'>
@@ -185,7 +185,7 @@ export default function Productcard( prop: Props) {
                         </DialogHeader>
                         {skip === false && (
                             <>
-                            <p className=' text-xs text-red-500'>Note, skipping the previous miner could lose 50% potential profit</p>
+                            <p className=' text-xs text-red-500'>Note: Just a friendly reminder bypassing the previous miner could lead to a 50% reduction in your potential profit.</p>
 
                             <div className=' w-full flex flex-col'>
                                 <p className=' text-sm text-yellow-500  '><span className=' line-through'>{prop.percentage}% Profit</span>  {(prop.percentage as any) / 2}% Profit</p>
@@ -222,7 +222,7 @@ export default function Productcard( prop: Props) {
 
                 <div className=' h-[25px] mt-2'>
                 {prop.b1t1 === '1' && (
-                <p className=' text-[.6rem] bg-red-600 px-3 py-1 w-fit rounded-full'>Buy one take one</p>
+                <p className=' text-[.6rem] bg-green-600 px-3 py-1 w-fit rounded-full'>Note: This Hasbot is Buy 1 take 1.</p>
                 )}
                 </div>
                

@@ -142,7 +142,7 @@ const icons = (name: string) => {
     <div className=' flex flex-col  w-full max-w-[400px] h-fit p-6 bg-zinc-900 rounded-md'>
         <p className=' font-semibold'>Social Media</p>
 
-        <div className=' w-full flex flex-col gap-2 mt-4'>
+        <div className=' w-full flex flex-col gap-3 mt-4'>
           {list.map((item, index) => (
             <div key={index} className=' flex items-center gap-2'>
               <div className=' bg-yellow-500 p-2 rounded-md'>

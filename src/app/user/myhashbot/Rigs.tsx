@@ -78,7 +78,7 @@ export default function Rigs() {
             <Spinner/>
           </div>
         ): (
-          <div className=' w-full max-w-[1740px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+          <div className=' w-full max-w-[1920px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
 
             {Object.values(list).map((item, index) => (
               <Myhashbotcard id={item.minerid} key={index} name={`${item.type === 'micro_hash' && 'Micro Hash' || item.type === 'mega_hash' && 'Mega Hash' || item.type === 'giga_hash' && 'Giga Hash'}`} percentage={`${item.profit * 100}`} duration={item.duration} img={`${item.type === 'micro_hash' && micro || item.type === 'mega_hash' && mega || item.type === 'giga_hash' && giga}`} size={'150'} earnings={item.earnings} timeleft={item.remainingtime} purchase={new Date(item.purchasedate).toLocaleString()} max={item.buyprice} buyprice={item.buyprice} b1t1={''}/>

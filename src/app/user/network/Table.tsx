@@ -110,7 +110,7 @@ export default function MyConnectionTable() {
 
 
   return (
-    <div className=' relative w-full max-w-[1740px] flex md:flex-row gap-4 h-full mt-6'>
+    <div className=' relative w-full max-w-[1920px] flex md:flex-row gap-4 h-full mt-6'>
 
       <div className=' w-fit hidden md:flex flex-col gap-2'>
         {levels.map((item, index) => (

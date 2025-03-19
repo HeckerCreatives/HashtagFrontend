@@ -137,7 +137,7 @@ export default function DashboardTable() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1920px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
         {/* <div className=' absolute top-0 w-[98%] bg-gradient-to-r from-green-700 to-green-500 p-2 rounded-sm -translate-y-4'>
             <Select value={tab} onValueChange={setTab}>
             <SelectTrigger className="w-[200px] bg-zinc-900">

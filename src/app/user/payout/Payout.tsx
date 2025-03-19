@@ -217,7 +217,7 @@ export default function Payout() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1740px] h-auto bg-zinc-900 p-4 md:p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1920px] h-auto bg-zinc-900 p-4 md:p-6'>
         {/* <div className=' flex items-center justify-between absolute top-0 w-[98%] bg-gradient-to-r from-green-700 to-green-500 p-2 rounded-sm -translate-y-4'>
             <Select value={type} onValueChange={setType}>
             <SelectTrigger className="w-[200px] bg-zinc-900">
@@ -252,7 +252,7 @@ export default function Payout() {
                 <div className='grid grid-cols-2 gap-2'>
                     <div className=' w-full flex flex-col gap-2'>
 
-                        <div className=' w-full flex flex-col gap-1 items-start h-auto'>
+                        <div className=' w-full flex flex-col gap-1 items-start h-[50px]'>
                              <Select onValueChange={(value) => setValue('paymentmethod', value)} {...register('paymentmethod')}>
                             <SelectTrigger className="w-full bg-zinc-950 text-white" >
                                 <SelectValue placeholder="Select Payment Method" />
@@ -266,7 +266,7 @@ export default function Payout() {
                             {errors.paymentmethod && <p className=' text-[.6em] text-red-500'>{errors.paymentmethod.message}</p>}
                         </div>
 
-                        <div className='w-full flex flex-col items-start gap-1 h-auto mt-2'>
+                        <div className='w-full flex flex-col items-start gap-1 h-[50px] mt-2'>
                             <Input type="number" className=' p-3 text-xs rounded-sm w-full' placeholder='Account number' {...register('accountnumber')}/>
                             {/* <p className=' text-[.6rem] md:text-xs text-red-500'>*Make sure you enter a valid account number</p> */}
                             {errors.accountnumber && <p className=' text-[.6em] text-red-500'>{errors.accountnumber.message}</p>}
@@ -277,14 +277,14 @@ export default function Payout() {
 
                     <div className=' w-full flex flex-col gap-2 '>
 
-                        <div className='w-full flex flex-col gap-1 items-start h-auto'>
+                        <div className='w-full flex flex-col gap-1 items-start h-[50px]'>
                             <Input type="text" className=' p-3 text-xs rounded-sm  w-full' placeholder='Account name' {...register('accountname')}/>
         
                             {/* <p className=' text-[.6rem] md:text-xs text-red-300'>*Make sure you enter a correct account name</p> */}
                             {errors.accountname && <p className=' text-[.6em] text-red-500'>{errors.accountname.message}</p>}
                         </div>
 
-                        <div className=' w-full flex flex-col gap-1 items-start h-auto mt-2'>
+                        <div className=' w-full flex flex-col gap-1 items-start h-[50px] mt-2'>
                             <Input type="number" className=' p-3 text-xs rounded-sm w-full' placeholder='Enter amount' {...register('payoutvalue')}/>
                             <p className=' text-[.5rem] md:text-xs text-red-300'></p>
                             {errors.payoutvalue && <p className=' text-[.6em] text-red-500'>{errors.payoutvalue.message}</p>}
