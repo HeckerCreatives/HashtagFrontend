@@ -149,7 +149,7 @@ export default function page() {
                         <div className=' w-9 aspect-square bg-yellow-400 rounded-full text-black flex items-center justify-center'>
                             <Phone size={20}/>
                         </div>
-                        <Input placeholder='Phone' className=' w-full rounded-full' {...register('phonenumber')}/>
+                        <Input placeholder='Phone' type='text' inputMode='numeric' pattern='[0-9]*' className='w-full rounded-full' {...register('phonenumber')} />
                         
                     </div>
                     {errors.phonenumber && <p className=' text-[.6em] text-red-400'>{errors.phonenumber.message}</p>}

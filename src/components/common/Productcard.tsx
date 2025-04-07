@@ -178,14 +178,14 @@ export default function Productcard( prop: Props) {
                     </DialogTrigger>
                     <DialogContent>
                         <DialogHeader>
-                        <DialogTitle>Are you absolutely sure you want to purchase <span className=' text-yellow-500'>{prop.name}</span> ?</DialogTitle>
+                        <DialogTitle>Are you sure you’d like to proceed with ordering <span className=' text-yellow-500'>{prop.name}</span>? For</DialogTitle>
                         <DialogDescription>
                             
                         </DialogDescription>
                         </DialogHeader>
-                        {skip === false && (
+                        {skip === true && (
                             <>
-                            <p className=' text-xs text-red-500'>Note: Just a friendly reminder bypassing the previous miner could lead to a 50% reduction in your potential profit.</p>
+                            <p className=' text-xs text-red-500'>Note: Just a friendly reminder bypassing the previous hashbot could lead to a 50% reduction in your potential profit.</p>
 
                             <div className=' w-full flex flex-col'>
                                 <p className=' text-sm text-yellow-500  '><span className=' line-through'>{prop.percentage}% Profit</span>  {(prop.percentage as any) / 2}% Profit</p>
@@ -201,7 +201,7 @@ export default function Productcard( prop: Props) {
                             </>
                         )}
 
-                        {skip === true && (
+                        {skip === false && (
                             <div className=' w-full flex flex-col'>
                                 <p className=' text-sm text-yellow-500'>{prop.percentage}% Profit</p>
                                 <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>

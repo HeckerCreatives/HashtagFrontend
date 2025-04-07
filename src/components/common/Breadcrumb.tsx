@@ -23,7 +23,7 @@ export default function Breadcrumbdb(prop: Props) {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild className=' hover:text-green-500'>
+              <BreadcrumbLink asChild className=' hover:text-yellow-500'>
                 <a href={prop.dashboard} className=' text-zinc-100 md:text-xs text-[.6rem]'>Dashboard</a>
               </BreadcrumbLink>
             </BreadcrumbItem>

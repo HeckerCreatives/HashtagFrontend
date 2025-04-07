@@ -108,7 +108,7 @@ export default function AdminLayout({
                 <div className=' relative z-10 hidden lg:flex items-center justify-center '>
                     <img src="/assets/Logo.png" alt="" width={60} />
                 </div>
-              <Breadcrumb dashboard={'/user/dashboard'} page={page}/>
+              <Breadcrumb dashboard={'/admin/dashboard'} page={page}/>
               
 
             </div>
