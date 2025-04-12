@@ -40,7 +40,7 @@ export const changepasswordadmin = z
 
 export const payin = z.object({
   username: z.string().max(20).nonempty('Please enter an username'),
-  amount: z.string().nonempty('Please enter an amount')
+  amount: z.number().min(1,'Please enter an amount')
 })
 
 

@@ -29,6 +29,7 @@ export default function Deposit() {
     setValue,
     reset,
     trigger,
+    watch,
     formState: { errors },
   } = useForm<Payin>({
     resolver: zodResolver(payin),
@@ -120,6 +121,22 @@ export default function Deposit() {
      }
    },[search])
 
+   const [rawValue, setRawValue] = useState('');
+   const amount = watch('amount', 0);
+
+   const formatNumber = (value: number) => {
+    return value.toLocaleString();
+  };
+
+   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let rawValue = event.target.value.replace(/,/g, ''); // Remove existing commas
+    let numericValue = Number(rawValue);
+ 
+    if (!isNaN(numericValue)) {
+      setValue('amount', numericValue, { shouldValidate: true }); // Update form state
+    }
+  };
+
 
   
   return (
@@ -163,7 +180,12 @@ export default function Deposit() {
 
 
             <label htmlFor="" className=' text-xs text-zinc-300 mt-2'>Amount</label>
-            <input type="number" placeholder=' Amount' className=' w-full p-2 rounded-sm text-black' {...register('amount')} />
+            <input type="number" placeholder=' Amount' className=' w-full p-2 rounded-sm text-black' 
+             defaultValue={amount}
+             value={amount ? formatNumber(amount) : ''}
+             onChange={handleAmountChange}
+             onBlur={() => setValue('amount', amount || 0, { shouldValidate: true })} 
+            />
               {errors.amount && <p className=' text-[.6em] text-red-400'>{errors.amount.message}</p>}
 
             <button disabled={loading} className=' bg-gradient w-fit px-6 py-2 text-sm text-white font-semibold rounded-sm mt-6 flex items-center justify-center gap-2'>

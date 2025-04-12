@@ -240,10 +240,10 @@ export default function page() {
 
             <Tabs defaultValue="tab1" className="w-full mt-12  ">
             <TabsList className=' w-full pl-16 md:pl-0 md:w-fit bg-zinc-900 flex md:text-sm text-[5rem] overflow-x-auto'>
-                <TabsTrigger value="tab1">Cashin history</TabsTrigger>
-                <TabsTrigger value="tab2">Cashout history</TabsTrigger>
+                <TabsTrigger value="tab1">Cashin History</TabsTrigger>
+                <TabsTrigger value="tab2">Cashout History</TabsTrigger>
                 <TabsTrigger value="tab3">Unilevel</TabsTrigger>
-                <TabsTrigger value="tab4">Miner inventory</TabsTrigger>
+                <TabsTrigger value="tab4">Hashbot Inventory</TabsTrigger>
             </TabsList>
             <TabsContent value="tab1"><Cashin/></TabsContent>
             <TabsContent value="tab2"><Cashout/></TabsContent>

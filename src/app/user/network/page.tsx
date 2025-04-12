@@ -9,7 +9,7 @@ export default function page() {
 
     <UserLayout>
         
-        <div className=" w-full h-full flex flex-col items-center p-8">
+        <div className=" w-full h-full flex flex-col items-center p-4">
          <MyConnectionTable/> 
         </div>
       

@@ -32,7 +32,7 @@ type Props = {
 
 export default function Productcard( prop: Props) {
     const [slider, setSlider] = useState(0)
-    const [val, setVal] = useState([prop.min]);
+    const [val, setVal] = useState(0);
     const type = prop.name === 'Micro Hash' && 'micro_hash' || prop.name === 'Mega Hash' && 'mega_hash' || prop.name === 'Giga Hash' && 'giga_hash'
     const [loading, setLoading] = useState(false)
     const router = useRouter()
@@ -48,7 +48,7 @@ export default function Productcard( prop: Props) {
         try {
             const request = axios.post(`${process.env.NEXT_PUBLIC_URL}/inventory/buyminer`,{
                 type: type, // quick_miner, switf_lane, rapid_lane
-                priceminer: val[0],
+                priceminer: val,
                 skip: skip
             },{
                 withCredentials: true,
@@ -148,7 +148,7 @@ export default function Productcard( prop: Props) {
 
                 <div className=' w-full p-2 bg-zinc-800 rounded-sm flex flex-wrap gap-1 items-center'>
                     <label htmlFor="" className=' text-xs text-zinc-400 w-[100px]'>Input amount:</label>
-                    <Input type="number" min={prop.min} max={prop.max} defaultValue={prop.min} value={val[0]} onChange={(e) => setVal([Number(e.target.value)])}  placeholder='Input ammount here' className=' text-sm p-2 rounded-md '/>
+                    <Input type="number" maxLength={8} min={prop.min} max={prop.max} defaultValue={prop.min} value={val} onChange={(e) => setVal(e.target.valueAsNumber)}  placeholder='Input ammount here' className=' text-sm p-2 rounded-md '/>
                 </div>
 
                 <div className=' w-full p-2 bg-zinc-800 rounded-sm flex flex-wrap gap-1 items-center'>
@@ -190,7 +190,7 @@ export default function Productcard( prop: Props) {
                             <div className=' w-full flex flex-col'>
                                 <p className=' text-sm text-yellow-500  '><span className=' line-through'>{prop.percentage}% Profit</span>  {(prop.percentage as any) / 2}% Profit</p>
                                 <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>
-                                <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val[0].toLocaleString()}</span></p>
+                                <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val.toLocaleString()}</span></p>
 
                                 <div className=' w-full flex items-end justify-end gap-4'>
                                     <Button onClick={buyHashbot} className=' btn-gradient'>Continue</Button>
@@ -205,7 +205,7 @@ export default function Productcard( prop: Props) {
                             <div className=' w-full flex flex-col'>
                                 <p className=' text-sm text-yellow-500'>{prop.percentage}% Profit</p>
                                 <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>
-                                <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val[0].toLocaleString()}</span></p>
+                                <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val.toLocaleString()}</span></p>
 
                                 <div className=' w-full flex items-end justify-end gap-4'>
                                     <Button onClick={buyHashbot} className=' btn-gradient'>Continue</Button>

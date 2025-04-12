@@ -290,8 +290,8 @@ export default function Comissionlist() {
                 <TableCell className="font-medium text-center">{item.username}</TableCell>
                 <TableCell className="font-medium text-center">{item.accountname}</TableCell>
                 <TableCell className="font-medium text-center">{item.accountnumber}</TableCell>
-                <TableCell className="font-medium text-center">{item.netamount}</TableCell>
-                <TableCell className="font-medium text-center">{item.grossamount}</TableCell>
+                <TableCell className="font-medium text-center">{item.netamount.toLocaleString()}</TableCell>
+                <TableCell className="font-medium text-center">{item.grossamount.toLocaleString()}</TableCell>
                 <TableCell className="font-medium text-center">{item.paymentmethod}</TableCell>
                 <TableCell className="font-medium text-center">{item.phonenumber}</TableCell>
                 <TableCell className="font-medium text-center">{item.type}</TableCell>
