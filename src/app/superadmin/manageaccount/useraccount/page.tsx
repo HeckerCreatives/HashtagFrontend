@@ -234,7 +234,7 @@ export default function page() {
             <div className=' flex flex-wrap items-center justify-center gap-6 mt-12'>
                 <Card icon={<Wallet size={30}/>} iconbg={'bg-amber-500'} title={'Credits'} amount={`${wallet?.userwallets.creditwallet.amount.toLocaleString()}`} subtitle={'Total credits'} text={''} loading={false}/>
                 <Card icon={<Wallet size={30}/>} iconbg={'bg-amber-500'} title={'Total commission'} amount={`${wallet?.userwallets.commissionwallet.amount.toLocaleString()}`} subtitle={'Total commissions'} text={''} loading={false}/>
-                <Card icon={<Wallet size={30}/>} iconbg={'bg-amber-500'} title={'Total miner earnings'} amount={`${wallet?.userwallets.minecoinwallet.amount.toLocaleString()}`} subtitle={'Total earings from miner'} text={''} loading={false}/>
+                <Card icon={<Wallet size={30}/>} iconbg={'bg-amber-500'} title={'Total hashbot earnings'} amount={`${wallet?.userwallets.minecoinwallet.amount.toLocaleString()}`} subtitle={'Total earings from miner'} text={''} loading={false}/>
 
             </div>
 
