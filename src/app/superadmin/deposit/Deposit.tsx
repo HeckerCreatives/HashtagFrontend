@@ -180,7 +180,7 @@ export default function Deposit() {
 
 
             <label htmlFor="" className=' text-xs text-zinc-300 mt-2'>Amount</label>
-            <input type="number" placeholder=' Amount' className=' w-full p-2 rounded-sm text-black' 
+            <input type="text" placeholder=' Amount' className=' w-full p-2 rounded-sm text-black' 
              defaultValue={amount}
              value={amount ? formatNumber(amount) : ''}
              onChange={handleAmountChange}
