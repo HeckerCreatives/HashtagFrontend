@@ -9,4 +9,7 @@ export const levels = [
     {name: 'Level 8', value: '7'},
     {name: 'Level 9', value: '8'},
     {name: 'Level 10', value: '9'},
+    {name: 'Level 11', value: '10'},
+    {name: 'Level 12', value: '11'},
+    {name: 'Level 13', value: '12'},
 ]
