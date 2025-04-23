@@ -17,9 +17,9 @@ export default function Navigation() {
 
 
         <a href="/" className=' flex items-center gap-2'>
-        <img src="/assets/Logo.png" alt="logo" width={75} height={75}/> <span className=' text-xl font-bold'><span className=' text-yellow-500'>HASH</span>TAG</span></a>
+        <img src="/assets/Logo.png" alt="logo" width={75} height={75}/><img src="/assets/hashtag-name.png" alt="logo" width={100} height={100}/></a>
 
-        <div className=' hidden lg:flex items-center gap-6 text-sm'>
+        <div className=' hidden lg:flex items-center gap-6 text-sm '>
             {Links.map((item, index) =>(
                 <a key={index} href={item.route} className=' hover:text-yellow-500 transition-all duration-200'>{item.name}</a>
             ))}
