@@ -287,8 +287,8 @@ export default function UserTable() {
   }
 
   return (
-    <div className=' relative w-full flex flex-col items-center max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
-        <div className=' flex md:flex-row flex-col gap-4 items-center justify-between sticky top-0 w-[98%] bg-gradient-to-r from-yellow-700 to-yellow-500 p-2 rounded-sm -translate-y-12'>
+    <div className=' relative w-full flex flex-col items-center max-w-[1740px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-2'>
+        <div className='   flex md:flex-row flex-col gap-4 items-center justify-between sticky z-20 top-0 w-[98%] bg-gradient-to-r p-2 from-yellow-700 to-yellow-500 rounded-sm -translate-y-12'>
             <Select value={status} onValueChange={setStatus}>
             <SelectTrigger className="w-[200px] bg-zinc-900">
                 <SelectValue placeholder="Filter by status" />
@@ -335,12 +335,12 @@ export default function UserTable() {
                   </DialogContent>
               </Dialog>
                 <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search Username' className=' p-2 rounded-sm text-xs bg-zinc-900 border-none' />
-                <button className=' p-2 bg-green-700 rounded-sm'><Search size={15}/></button>
+                <button className=' p-2 bg-yellow-700 rounded-sm'><Search size={15}/></button>
             </div>
 
 
         </div>
-        <Table className=''>
+        <Table className=' '>
         {list.length === 0 &&  
           <TableCaption className=' text-xs'>No data</TableCaption>
           }

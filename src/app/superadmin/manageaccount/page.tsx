@@ -15,10 +15,10 @@ export default function page() {
 
           <Tabs defaultValue="admin" className=" w-full bg-zinc-900 p-2 md:p-6 max-w-[1740px] rounded-sm">
             <TabsList className=' bg-zinc-800'>
-              <TabsTrigger value="admin">Admins</TabsTrigger>
-              <TabsTrigger value="user">Users</TabsTrigger>
-              <TabsTrigger value="commissions">DRB</TabsTrigger>
-              <TabsTrigger value="unilevelcommissions">Unilevel</TabsTrigger>
+              <TabsTrigger className=' ~text-xs/sm' value="admin">Admins</TabsTrigger>
+              <TabsTrigger className=' ~text-xs/sm' value="user">Users</TabsTrigger>
+              <TabsTrigger className=' ~text-xs/sm' value="commissions">DRB</TabsTrigger>
+              <TabsTrigger className=' ~text-xs/sm' value="unilevelcommissions">Unilevel</TabsTrigger>
 
             </TabsList>
             <TabsContent value="user" className=' mt-12'>
