@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { AxiosError } from 'axios'
 import toast from 'react-hot-toast'
@@ -45,6 +45,7 @@ export default function Payout() {
     setValue,
     reset,
     trigger,
+    control,
     formState: { errors },
   } = useForm<RequestPayout>({
     resolver: zodResolver(payout),
@@ -212,6 +213,17 @@ export default function Payout() {
         walletBalance()
     },[state])
 
+    const formatNumberWithCommas = (value: any) => {
+        if (!value) return '';
+        const parts = value.toString().replace(/\D/g, '').split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return parts.join('.');
+      };
+      
+      const parseNumber = (value: any) => {
+        return value.replace(/\D/g, '');
+      };
+
 
 
 
@@ -284,10 +296,24 @@ export default function Payout() {
                             {errors.accountname && <p className=' text-[.6em] text-red-500'>{errors.accountname.message}</p>}
                         </div>
 
-                        <div className=' w-full flex flex-col gap-1 items-start h-[50px] mt-2'>
-                            <Input type="number" className=' p-3 text-xs rounded-sm w-full' placeholder='Enter amount' {...register('payoutvalue')}/>
-                            <p className=' text-[.5rem] md:text-xs text-red-300'></p>
-                            {errors.payoutvalue && <p className=' text-[.6em] text-red-500'>{errors.payoutvalue.message}</p>}
+                        <div className='w-full flex flex-col gap-1 items-start h-[50px] mt-2'>
+                        <Controller
+                            name="payoutvalue"
+                            control={control}
+                            render={({ field }) => (
+                            <Input
+                                type="text"
+                                className="p-3 text-xs rounded-sm w-full"
+                                placeholder="Enter amount"
+                                value={formatNumberWithCommas(field.value)}
+                                onChange={(e) => field.onChange(parseNumber(e.target.value))}
+                            />
+                            )}
+                        />
+                        <p className='text-[.5rem] md:text-xs text-red-300'></p>
+                        {errors.payoutvalue && (
+                            <p className='text-[.6em] text-red-500'>{errors.payoutvalue.message}</p>
+                        )}
                         </div>
                         
 

@@ -147,9 +147,9 @@ export default function MyConnectionTable() {
 
         </div> */}
 
-        <div className=' w-full flex flex-wrap items-end justify-end gap-4'>
+        <div className=' w-full flex  gap-4'>
           <Select value={level} onValueChange={setLevel}>
-            <SelectTrigger className="w-[200px] md:hidden bg-zinc-900">
+            <SelectTrigger className="w-[100px] md:hidden bg-zinc-900">
                 <SelectValue placeholder="Select Levels" />
             </SelectTrigger>
             <SelectContent>
@@ -160,7 +160,7 @@ export default function MyConnectionTable() {
             </SelectContent>
             </Select>
           <div className=' flex items-center gap-2'>
-                <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search Username' className=' p-2 rounded-sm text-xs bg-zinc-800 border-none' />
+                <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search Username' className=' p-2 rounded-sm text-xs bg-zinc-800 border-none w-[150px]' />
                 <button className=' p-2 bg-yellow-600 rounded-sm'><Search size={15}/></button>
             </div>
         </div>

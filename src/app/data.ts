@@ -7,8 +7,8 @@ export const Links = [
 
 export const bots = [
     {img: '/assets/micro op2.png',name: 'Micro Hash', description: 'Our Micro Hash focuses on simple tasks and beginner-level trades, making it perfect for handling basic transactions and managing small inventories. Its main advantage is its ease of use, allowing newcomers to learn quickly and get started with trading.', topup: 500.00, min: 500.00, max: 5000.00, duration: 7, profit: 20},
-    {img: '/assets/mega opt2.png',name: 'Mega Hash', description: 'Meet Mega Hash, a leader in advanced trading tasks and efficient inventory management. It handles complex transactions with ease and delivers detailed trade analysis. To unlock its full potential, a solid understanding of trading strategies is essential.', topup: 1000.00, min: 1000.00, max: 10000.00, duration: 14, profit: 50},
-    {img: '/assets/giga opt2.png',name: 'Giga Hash', description: 'Giga Hash is designed to handle intermediate trades and manage moderates. It can execute more complex transactions and provide improved trade insights. With its balanced performance, it’s perfect for players aiming to elevate their trading skills.', topup: 2000.00, min: 2000.00, max: 20000.00, duration: 28, profit: 120},
+    {img: '/assets/mega opt2.png',name: 'Mega Hash', description: 'Meet Mega Hash, a leader in advanced trading tasks and efficient inventory management. It handles complex transactions with ease and delivers detailed trade analysis. To unlock its full potential, a solid understanding of trading strategies is essential.', topup: 2000.00, min: 2000.00, max: 20000.00, duration: 14, profit: 50},
+    {img: '/assets/giga opt2.png',name: 'Giga Hash', description: 'Giga Hash is designed to handle intermediate trades and manage moderates. It can execute more complex transactions and provide improved trade insights. With its balanced performance, it’s perfect for players aiming to elevate their trading skills.', topup: 5000.00, min: 5000.00, max: 50000.00, duration: 28, profit: 120},
 ]
 
 export const faq = [
@@ -212,7 +212,7 @@ export const termsAndConditions = [
     {
       question: "What type of Hash Bot can I buy in Hashtag?",
       answer:
-        "Hashtag offers a range of Hash Bots to suit your needs, divided into three categories: Micro Hash, Mega Hash, and Giga Hash. Each type provides unique earning opportunities based on your chosen investment.\n\nMicro Hash: Earn 20% profit in just 7 days with an investment ranging from ₱500 to ₱5,000.\nMega Hash: Enjoy a 50% profit over 14 days with investments between ₱1,000 and ₱10,000.\nGiga Hash: Maximize your returns with 120% profit in 28 days, requiring an investment of ₱2,000 to ₱20,000.\n\nChoose the Hash Bot that matches your goals and watch your investment grow!",
+        "Hashtag offers a range of Hash Bots to suit your needs, divided into three categories: Micro Hash, Mega Hash, and Giga Hash. Each type provides unique earning opportunities based on your chosen investment.\n\nMicro Hash: Earn 20% profit in just 7 days with an investment ranging from ₱500 to ₱5,000.\nMega Hash: Enjoy a 50% profit over 14 days with investments between ₱2,000 and ₱20,000.\nGiga Hash: Maximize your returns with 120% profit in 28 days, requiring an investment of ₱5,000 to ₱50,000.\n\nChoose the Hash Bot that matches your goals and watch your investment grow!",
     },
     {
       question: "Can I have multiple accounts?",

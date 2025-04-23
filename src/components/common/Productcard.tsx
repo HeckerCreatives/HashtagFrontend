@@ -172,7 +172,7 @@ export default function Productcard(prop: Props) {
                                     <DialogDescription>
                                     </DialogDescription>
                                 </DialogHeader>
-                                {skip === true && (
+                                {/* {skip === true && (
                                     <>
                                         <p className=' text-xs text-red-500'>Note: Just a friendly reminder bypassing the previous hashbot could lead to a 50% reduction in your potential profit.</p>
                                         <div className=' w-full flex flex-col'>
@@ -184,8 +184,8 @@ export default function Productcard(prop: Props) {
                                             </div>
                                         </div>
                                     </>
-                                )}
-                                {skip === false && (
+                                )} */}
+                                {/* {skip === false && (
                                     <div className=' w-full flex flex-col'>
                                         <p className=' text-sm text-yellow-500'>{prop.percentage}% Profit</p>
                                         <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>
@@ -194,7 +194,16 @@ export default function Productcard(prop: Props) {
                                             <Button onClick={buyHashbot} className=' btn-gradient'>Continue</Button>
                                         </div>
                                     </div>
-                                )}
+                                )} */}
+
+                                    <div className=' w-full flex flex-col'>
+                                        <p className=' text-sm text-yellow-500'>{prop.percentage}% Profit</p>
+                                        <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>
+                                        <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val.toLocaleString()}</span></p>
+                                        <div className=' w-full flex items-end justify-end gap-4'>
+                                            <Button onClick={buyHashbot} className=' btn-gradient'>Continue</Button>
+                                        </div>
+                                    </div>
                             </DialogContent>
                         </Dialog>
                     </div>
