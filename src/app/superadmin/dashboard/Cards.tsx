@@ -15,6 +15,7 @@ payoutminer: number
 registered: number
 totalpayout: number
 totalusercommission: number
+payoutdirectcommision: number
 
 }
 
@@ -56,9 +57,9 @@ export default function Cards() {
         <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Payout'} amount={`${wallets?.totalpayout.toLocaleString()}`} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-red-500'} title={'Hash Bot Total Payout'} amount={`${wallets?.payoutminer.toLocaleString()}`} subtitle={'Total income from hash bot'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-blue-500'} title={'Company Commission'} amount={`${wallets?.companycommission.toLocaleString()}`} subtitle={''} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Total User Commission'} amount={`${wallets?.totalusercommission.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${wallets?.registered.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Payout Commission'} amount={`${wallets?.payoutcommission.toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Direct Refferal Total Commission'} amount={`${wallets?.payoutdirectcommision.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${wallets?.payoutcommission.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Payout Commission'} amount={`${((wallets?.payoutcommission ?? 0) + (wallets?.payoutdirectcommision ?? 0)).toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Hash Bot Profit'} amount={`${wallets?.minerprofit.toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
 
     </div>
