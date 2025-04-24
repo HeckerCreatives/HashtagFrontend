@@ -11,12 +11,12 @@ export default function History() {
         <Tabs defaultValue="comission" className="w-full h-full">
         <TabsList>
             <TabsTrigger value="comission">Commission</TabsTrigger>
-            <TabsTrigger value="rigminer">Rig Miner</TabsTrigger>
+            <TabsTrigger value="hashbot">Hash Bot</TabsTrigger>
         </TabsList>
         <TabsContent value="comission">
             <ComissionHistory/>
         </TabsContent>
-        <TabsContent value="rigminer">
+        <TabsContent value="hashbot">
             <RigMinerHistory/>
         </TabsContent>
         </Tabs>

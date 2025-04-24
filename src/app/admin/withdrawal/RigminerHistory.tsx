@@ -92,7 +92,7 @@ export default function RigMinerHistory() {
   return (
     <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1440px] min-h-[500px] h-auto mt-12 bg-zinc-900 p-6'>
         <div className=' flex md:flex-row flex-col items-center justify-between absolute top-0 w-[98%] gap-2 h-auto md:h-[55px] bg-gradient-to-r from-yellow-700 to-yellow-500 p-2 rounded-sm -translate-y-4'>
-            <p className=' text-sm font-semibold'>Rig Miner History</p>
+            <p className=' text-sm font-semibold'>Hash History</p>
 
             <div className=' flex items-center gap-2'>
                 <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Search Username' className=' p-2 rounded-sm text-xs bg-zinc-900 border-none' />
