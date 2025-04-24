@@ -25,6 +25,8 @@ type Wallets = {
     "creditwallet": number
     "minecoinwallet": number
     "commissionwallet": number
+    "unilevelwallet": number ,
+    "directwallet": number
     
 }
 
@@ -339,7 +341,7 @@ export default function Payout() {
                         <div className=' flex items-center justify-center gap-8'>
                             <div className=' flex flex-col gap-2'>
                                  <p className=' text-sm'>Commission Wallet Balance</p>
-                                 <p className=' text-2xl font-semibold text-yellow-500'>₱ {wallet?.commissionwallet.toLocaleString()}</p>
+                                 <p className=' text-2xl font-semibold text-yellow-500'>₱ {((wallet?.directwallet || 0) + (wallet?.unilevelwallet || 0)).toLocaleString()}</p>
                             </div>
 
                             <div className=' h-full flex items-center justify-center w-fit'>

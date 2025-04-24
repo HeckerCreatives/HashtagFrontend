@@ -1,26 +1,74 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Switch } from "@/components/ui/switch"
+import toast from 'react-hot-toast'
+import axios from 'axios'
+import { boolean } from 'zod'
+import { handleApiError } from '@/lib/errorHandler'
 
 
 type Props = {
     icon: React.ReactElement
     name: string
-    value: number
+    type: string
+    value: string
 
 }
 
 export default function Maintenancecard( prop: Props) {
+  const [state, setState] = useState(false)
+
+  const updateMaintenance = async (newState: boolean) => {
+    try {
+      const request = axios.post(`${process.env.NEXT_PUBLIC_URL}/maintenance/changemaintenance`, {
+        type: prop.type, 
+        value: newState ? '1' : '0'
+      }, {
+        withCredentials: true
+      });
+
+      const response = await toast.promise(request, {
+        loading: 'Updating....',
+        success: `Successfully updated`,
+        error: 'Error while updating maintenance',
+      });
+
+      if (response.data.message === 'success') {
+         window.location.reload();
+
+      }
+    } catch (error) {
+     handleApiError(error)
+    }
+  }
+
+  useEffect(() => {
+    setState(prop.value === '0' ? false : true)
+  },[prop])
+
+  const titleCard = (data: string) => {
+    if(data === 'payout'){
+      return 'Maintenance Payout'
+    } else if(data === 'b1t1'){
+      return 'Buy One Take One'
+    } else {
+      return 'Full Maintenance'
+
+    }
+  }
+
+
   return (
-    <div className=' w-full h-auto p-4 flex items-center gap-4 bg-zinc-900 rounded-sm'>
+    <div className=' w-full h-auto p-4 flex items-center gap-4 bg-zinc-800 rounded-sm'>
         
-        <div className='flex items-center justify-center bg-zinc-800 p-4 rounded-sm text-yellow-500'>
+        <div className='flex items-center justify-center bg-zinc-900 p-4 rounded-sm text-yellow-500'>
             {prop.icon}
         </div>
       
 
         <div className=' flex flex-col gap-3'>
-            <p className=' text-sm font-semibold'>{prop.name}</p>
-            <Switch/>
+            <p className=' text-sm font-semibold'>{titleCard(prop.type)} ({prop.value === '0' ? 'off' : 'on'})</p>
+            <Switch checked={state} onCheckedChange={(checked) => updateMaintenance(checked)} className=''/>
         </div>
 
     </div>

@@ -12,6 +12,8 @@ type Wallets = {
         "creditwallet": number
         "minecoinwallet": number
         "commissionwallet": number
+        "unilevelwallet": number,
+        "directwallet": number
     }
     
 }
@@ -113,13 +115,13 @@ export default function Cards() {
     <div className=' max-w-[1920px] h-auto w-full flex flex-wrap gap-8 mt-6'>
 
         <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Top Up Balance'} amount={`${wallets?.data.creditwallet.toLocaleString()}`} subtitle={'Use to purchase hash bot set up'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Withdrawables'} amount={`${withdrawables.toLocaleString()}`} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-red-500'} title={'Hash Bot Total Earning'} amount={`${earnings?.data.mining.toLocaleString()}`} subtitle={'Total income from hash bot'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-blue-500'} title={'Hash Bot Wallet'} amount={`${wallets?.data.minecoinwallet.toLocaleString()}`} subtitle={'Unclaimed Hash Bot Value'} text={`₱ ${unclaimed.toLocaleString()}`} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Referral Total Commission'} amount={`${earnings?.data.referral.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${earnings?.data.unilevel.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Commission Wallet'} amount={`${wallets?.data.commissionwallet.toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Profits'} amount={`${totalearnings.toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Withdrawables'} amount={`${((wallets?.data.unilevelwallet || 0) + (wallets?.data.directwallet || 0) + (wallets?.data.minecoinwallet || 0)).toLocaleString()}`} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-red-500'} title={'Hash Bot Wallet'} amount={`${wallets?.data.minecoinwallet.toLocaleString()}`} subtitle={'Total income from hash bot'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-blue-500'} title={'Unclaimed Hash Bot Earnings'} amount={`${unclaimed.toLocaleString()}`} subtitle={'Unclaimed Hash Bot Value'} text={`₱ ${unclaimed.toLocaleString()}`} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Referral Total Commission'} amount={`${wallets?.data.directwallet.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${wallets?.data.unilevelwallet.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Commission Wallet'} amount={`${((wallets?.data.directwallet || 0) + (wallets?.data.unilevelwallet || 0)).toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Profits'} amount={`${((wallets?.data.directwallet || 0) + (wallets?.data.unilevelwallet || 0) + (wallets?.data.minecoinwallet || 0)).toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
 
     </div>
   )
