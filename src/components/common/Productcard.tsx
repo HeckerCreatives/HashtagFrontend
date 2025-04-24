@@ -40,6 +40,8 @@ export default function Productcard(prop: Props) {
 
     const buyHashbot = async () => {
         setLoading(true)
+        setDialog(false)
+
         router.push('?state=true')
         try {
             const request = axios.post(`${process.env.NEXT_PUBLIC_URL}/inventory/buyminer`, {
