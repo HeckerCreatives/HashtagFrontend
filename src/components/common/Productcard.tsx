@@ -39,7 +39,6 @@ export default function Productcard(prop: Props) {
     const [skip, setSkip] = useState(true)
 
     const buyHashbot = async () => {
-        setDialog(false)
         setLoading(true)
         router.push('?state=true')
         try {
@@ -62,9 +61,13 @@ export default function Productcard(prop: Props) {
             if (response.data.message === 'success') {
                 setLoading(false)
                 router.push('?state=false')
+                setDialog(false)
+
             }
         } catch (error) {
             setLoading(false)
+            setDialog(false)
+
             if (axios.isAxiosError(error)) {
                 const axiosError = error as AxiosError<{ message: string, data: string }>;
                 if (axiosError.response && axiosError.response.status === 401) {
@@ -201,7 +204,7 @@ export default function Productcard(prop: Props) {
                                         <p className=' text-sm text-yellow-500'>{prop.duration} days duration</p>
                                         <p className=' text-sm text-white'>Selected Price: <span className=' text-yellow-500'>P {val.toLocaleString()}</span></p>
                                         <div className=' w-full flex items-end justify-end gap-4'>
-                                            <Button onClick={buyHashbot} className=' btn-gradient'>Continue</Button>
+                                            <Button disabled={loading} onClick={buyHashbot} className=' btn-gradient'>Continue</Button>
                                         </div>
                                     </div>
                             </DialogContent>
