@@ -50,9 +50,9 @@ export default function Cards() {
     <div className=' max-w-[1240px] h-auto w-full grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-8 mt-6 bg-zinc-950 py-6 px-3'>
 
 
-        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Total Active Users'} amount={`${count?.totalusers}`} subtitle={'Current total active users'} text={''}/>
-        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Active Users'} amount={`${count?.activeusers}`} subtitle={'Current active users'} text={''}/>
-        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-red-500'} title={'Banned Users'} amount={`${count?.banusers}`} subtitle={'Current Banned users'} text={''}/>
+        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Registered Users'} amount={`${count?.totalusers}`} subtitle={'Total registered users'} text={''}/>
+        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Active Users'} amount={`${count?.activeusers}`} subtitle={'Total active users'} text={''}/>
+        <ManageCard icon={<Wallet size={30} />} iconbg={' bg-red-500'} title={'Banned Users'} amount={`${count?.banusers}`} subtitle={'Total banned users'} text={''}/>
         
     </div>
   )
