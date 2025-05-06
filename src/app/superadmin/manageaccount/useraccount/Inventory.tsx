@@ -9,7 +9,7 @@ import {
     TableRow,
   } from "@/components/ui/table"
 import Spinner from '@/components/common/Spinner'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { useSearchParams } from 'next/navigation'
 import Pagination from '@/components/common/Pagination'
 import Countdown from 'react-countdown'
@@ -22,6 +22,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import toast from 'react-hot-toast'
+import { Trash2 } from 'lucide-react'
 
 type Miner = {
     minerid:string
@@ -119,6 +121,57 @@ export default function Inventory() {
 
       }
     }
+
+
+    const deleteInventory = async ( petid: string) => {
+      setLoading(true);
+      try {
+          const request = axios.post(`${process.env.NEXT_PUBLIC_URL}/inventory/deleteplayerinventoryforadmin`, {
+            // playerid: id,
+            minerid: petid
+          }, {
+              withCredentials: true,
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          });
+    
+          const response = await toast.promise(request, {
+              loading: `Deleting chrono...`,
+              success: `Successfully deleted `,
+              error: `Error while deleting chrono.`,
+          });
+          if (response.data.message === 'success') {
+              setLoading(false);
+              window.location.reload()
+          }
+      } catch (error) {
+          setLoading(false);
+    
+          if (axios.isAxiosError(error)) {
+              const axiosError = error as AxiosError<{ message: string, data: string }>;
+              if (axiosError.response && axiosError.response.status === 401) {
+                  toast.error(`${axiosError.response.data.data}`);
+              }
+    
+              if (axiosError.response && axiosError.response.status === 400) {
+                  toast.error(`${axiosError.response.data.data}`);
+              }
+    
+              if (axiosError.response && axiosError.response.status === 402) {
+                  toast.error(`${axiosError.response.data.data}`);
+              }
+    
+              if (axiosError.response && axiosError.response.status === 403) {
+                  toast.error(`${axiosError.response.data.data}`);
+              }
+    
+              if (axiosError.response && axiosError.response.status === 404) {
+                  toast.error(`${axiosError.response.data.data}`);
+              }
+          }
+      }
+    };
     
   return (
     <div className=' w-full flex flex-col gap-8 items-center bg-zinc-900 min-h-[500px] p-4'>
@@ -163,7 +216,7 @@ export default function Inventory() {
                   />
                   </TableCell>
                   <TableCell className=' text-center'>{item.type == "micro_hash" ? "Micro Hash" : item.type == "mega_hash" ? "Mega Hash" : item.type == "giga_hash" ? "Giga Hash" : ""}</TableCell>
-                  <TableCell className=' text-center'>
+                  <TableCell className=' text-center flex items-center gap-2'>
                   <Dialog open={modalOpen} onOpenChange={setModalOpen}>
                     <DialogTrigger disabled={matureLoading || item.remainingtime <= 0}>
                         <Button onClick={() => setModalOpen(true)} className="inline-flex items-center" disabled={matureLoading || item.remainingtime <= 0}>
@@ -171,9 +224,9 @@ export default function Inventory() {
                             <Spinner />
                           ) : (
                             item.remainingtime <= 0 ? (
-                              <p>Already matured</p>
+                              <p className=' text-xs'>Already matured</p>
                             ) : (
-                              <p>Mature</p>
+                              <p className=' text-xs'>Mature</p>
                             )
                           )}
                         </Button>
@@ -191,11 +244,31 @@ export default function Inventory() {
                       {matureLoading ? (
                           <Spinner />
                         ) : (
-                          <p>Mature</p>
+                          <p className=' text-xs'>Mature</p>
                         )}
                       </Button>
                     </DialogContent>
                   </Dialog>
+
+                  <Dialog >
+                                     <DialogTrigger className=' text-[.7rem] bg-red-500 text-white p-2 rounded-md flex items-center gap-1'><Trash2 size={15}/></DialogTrigger>
+                                     <DialogContent>
+                                       <DialogHeader>
+                                         <DialogTitle>Are you absolutely sure?</DialogTitle>
+                                         <DialogDescription>
+                                           This action cannot be undone. This will permanently delete the hashbot.
+                                         </DialogDescription>
+                                       </DialogHeader>
+               
+                                       <div className=' w-full flex items-end justify-end'>
+                                         <button disabled={loading} 
+                                          onClick={() => deleteInventory( item.minerid)} 
+                                         className=' px-4 py-2 text-xs bg-red-500 text-white rounded-md'>Continue</button>
+               
+                                       </div>
+                                     </DialogContent>
+                                   </Dialog>
+
                   </TableCell>
                 </TableRow>
               ))}
