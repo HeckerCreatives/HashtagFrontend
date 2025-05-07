@@ -55,6 +55,12 @@ type Wallet = {
 }
 
 
+interface Statistics {
+    hashbot:number,
+    referral:number,
+    unilevel:number
+  }
+
 export default function page() {
 
     const router = useRouter()
@@ -66,6 +72,29 @@ export default function page() {
     const [data, setData] = useState<User>()
     const [wallet, setWallet] = useState<Wallet>()
     const state = params.get('state')
+
+    const [stats, setStats] = useState<Statistics>()
+
+
+    useEffect(() => {
+      const getWallets = async () => {
+        try {
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/wallethistory/getwalletstatisticssuperadmin?id=${id}`,{
+          withCredentials:true
+          })
+          
+          setStats(response.data.data)
+        } catch (error) {
+          if (axios.isAxiosError(error)) {
+            const axiosError = error as AxiosError<{ message: string, data: string }>;
+            if (axiosError.response && axiosError.response.status === 401) {
+             
+              }    
+            } 
+        }
+      }
+      getWallets()
+  },[])
 
     //user data
     useEffect(() => {
@@ -249,11 +278,11 @@ export default function page() {
              
 
                 <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Top Up Balance'} amount={wallet?.userwallets.creditwallet.amount || 0} subtitle={'Use to purchase chrono package'} text={''} loading={false} editable={true} type={'creditwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Total Withdrawables'} amount={(wallet?.userwallets.unilevelwallet.amount || 0) + (wallet?.userwallets.directwallet.amount || 0) + (wallet?.userwallets.minecoinwallet.amount || 0)} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={false} editable={false} type={'creditwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Hash Bot Wallet'} amount={wallet?.userwallets.minecoinwallet.amount || 0} subtitle={'Total income from hash bot'} text={''} loading={false} editable={true} type={'minecoinwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Referral Total Commission'} amount={wallet?.userwallets.directwallet.amount || 0} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={false} editable={true} type={'directwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Unilevel Total Commission'} amount={wallet?.userwallets.unilevelwallet.amount || 0} subtitle={'Total accumulated commission from lvl 2 to lvl 13'} text={''} loading={false} editable={true} type={'unilevelwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Commission Wallet'} amount={(wallet?.userwallets.unilevelwallet.amount || 0) + (wallet?.userwallets.directwallet.amount || 0)} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={false} editable={false} type={'commissionwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Total Withdrawables'} amount={(wallet?.userwallets.commissionwallet.amount || 0) + (wallet?.userwallets.minecoinwallet.amount || 0)} subtitle={'The sum of commission wallet & hash bot wallet'} text={''} loading={false} editable={false} type={'creditwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Hash Bot Wallet'} amount={wallet?.userwallets.minecoinwallet.amount || 0} subtitle={'Total income from hash bot'} text={''} loading={false} editable={false} type={'minecoinwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Referral Total Earnings'} amount={stats?.referral || 0} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={false} editable={false} type={'directwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Unilevel Total Earnings'} amount={stats?.unilevel || 0} subtitle={'Total accumulated commission from lvl 2 to lvl 13'} text={''} loading={false} editable={false} type={'unilevelwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Commission Wallet'} amount={(wallet?.userwallets.commissionwallet.amount || 0)} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={false} editable={false} type={'commissionwallet'}/>
                
 
             </div>
