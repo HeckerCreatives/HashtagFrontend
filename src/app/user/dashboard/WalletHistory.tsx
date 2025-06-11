@@ -87,7 +87,7 @@ export default function WalletHistoryTable() {
 
   
   return (
-    <div className=' relative w-full flex flex-col items-center gap-8 max-w-[1440px] min-h-[500px] h-auto mt-12 bg-zinc-800 p-6'>
+    <div className=' relative w-full flex flex-col items-center gap-8  min-h-[500px] h-auto mt-12 bg-zinc-800 p-6'>
         <div className=' absolute top-0 w-[98%] bg-yellow-500 p-2 rounded-sm -translate-y-4'>
             <Select value={tab} onValueChange={setTab} >
             <SelectTrigger className=" w-full max-w-[240px] bg-zinc-900 text-white">
