@@ -41,12 +41,8 @@ export default function Cards() {
   },[])
   return (
     <div className=' max-w-[1740px] h-auto w-full flex flex-wrap gap-8 mt-6'>
-
-
-    <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Total Request Commission'} amount={`${total?.totalrequestcommission.toLocaleString()}`} subtitle={'User Total Request Commission'} text={''} loading={loading}/>
-    <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Hash Bot Request'} amount={`${total?.totalrequestminecoin.toLocaleString()}`} subtitle={'User Total Hashbot Request'} text={''} loading={loading}/>
-   
-
-</div>
+      <Card icon={<Wallet size={30} />} iconbg={' bg-orange-500'} title={'Total Request Commission'} amount={`${total?.totalrequestcommission.toLocaleString()}`} subtitle={'User Total Request Commission'} text={''} loading={loading}/>
+      <Card icon={<Wallet size={30} />} iconbg={' bg-green-500'} title={'Total Hash Bot Request'} amount={`${total?.totalrequestminecoin.toLocaleString()}`} subtitle={'User Total Hashbot Request'} text={''} loading={loading}/>
+  </div>
   )
 }

@@ -62,7 +62,7 @@ export default function Cards() {
         <Card icon={<Wallet size={30} />} iconbg={' bg-pink-500'} title={'Direct Referral Total Commission'} amount={`${wallets?.directcommision.toLocaleString()}`} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-purple-500'} title={'Unilevel Total Commission'} amount={`${wallets?.unilevelcommision.toLocaleString()}`} subtitle={'Total accumulated commission from lvl 2 to lvl 10'} text={''} loading={loading}/>
         <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Payout Commission'} amount={`${((wallets?.directcommision ?? 0) + (wallets?.unilevelcommision ?? 0)).toLocaleString()}`} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={loading}/>
-        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Hash Bot Profit'} amount={`${wallets?.minerprofit.toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
+        <Card icon={<Wallet size={30} />} iconbg={' bg-cyan-500'} title={'Total Hash Bot Profit'} amount={`${wallets?.minerprofit.toLocaleString()}`} subtitle={'The sum of referral commission, unilevel & hash bot total earning'} text={''} loading={loading}/>
 
     </div>
   )
