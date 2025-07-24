@@ -203,10 +203,10 @@ export default function Inventory() {
               {Object.values(list).map((item, index) => (
                 <TableRow key={index}>
                   <TableCell className=' text-center'>{new Date(item.purchasedate).toLocaleString()}</TableCell>
-                  <TableCell className=' text-center'>₱ {item.buyprice}</TableCell>
+                  <TableCell className=' text-center'>₱ {item.buyprice.toLocaleString()}</TableCell>
                   <TableCell className=' text-center'>{item.duration}</TableCell>
-                  <TableCell className=' text-center'>₱ {Math.floor(item.earnings * 100) / 100}</TableCell>
-                  <TableCell className=' text-center'>₱ {item.profit}</TableCell>
+                  <TableCell className=' text-center'>₱ {(Math.floor(item.earnings * 100) / 100).toLocaleString()}</TableCell>
+                  <TableCell className=' text-center'>₱ {item.profit.toLocaleString()}</TableCell>
                   <TableCell className=' text-center'>
                   <Countdown
                     className=' mt-2'
