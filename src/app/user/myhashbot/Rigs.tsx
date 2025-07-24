@@ -20,6 +20,7 @@ profit: number
 purchasedate: string
 remainingtime: number
 type: string
+name: string
 }
 
 export default function Rigs() {
@@ -29,6 +30,9 @@ export default function Rigs() {
   const micro = '/assets/micro op2.png'
   const mega = '/assets/mega opt2.png'
   const giga = '/assets/giga opt2.png'
+  const tera = '/bot/Tera.png'
+  const ulti = '/bot/Ulti.png'
+  const care = '/bot/Care.png'
 
   const [list, setList] = useState<Inventory[]>([])
   const [totalpage, setTotalPage] = useState(0)
@@ -43,7 +47,7 @@ export default function Rigs() {
     setLoading(true)
     const getInventory = async () => {
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/inventory/getinventory?page=${currentpage}&limit=6`,{
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/inventory/getinventory?page=${currentpage}&limit=8`,{
           withCredentials: true
           })
         setList(res.data.data.miners)
@@ -78,10 +82,10 @@ export default function Rigs() {
             <Spinner/>
           </div>
         ): (
-          <div className=' w-full max-w-[1920px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+          <div className=' w-full max-w-[1920px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 md:gap-8'>
 
             {Object.values(list).map((item, index) => (
-              <Myhashbotcard id={item.minerid} key={index} name={`${item.type === 'micro_hash' && 'Micro Hash' || item.type === 'mega_hash' && 'Mega Hash' || item.type === 'giga_hash' && 'Giga Hash'}`} percentage={`${item.profit * 100}`} duration={item.duration} img={`${item.type === 'micro_hash' && micro || item.type === 'mega_hash' && mega || item.type === 'giga_hash' && giga}`} size={'150'} earnings={item.earnings} timeleft={item.remainingtime} purchase={new Date(item.purchasedate).toLocaleString()} max={item.buyprice} buyprice={item.buyprice} b1t1={''}/>
+              <Myhashbotcard id={item.minerid} key={index} name={item.name} percentage={`${item.profit * 100}`} duration={item.duration} img={`${item.type === 'micro_hash' && micro || item.type === 'mega_hash' && mega || item.type === 'giga_hash' && giga || item.type === 'tera_hash' && tera || item.type === 'ulti_hash' && ulti || item.type === 'hash_care' && care} `} size={'150'} earnings={item.earnings} timeleft={item.remainingtime} purchase={new Date(item.purchasedate).toLocaleString()} max={item.buyprice} buyprice={item.buyprice} b1t1={''}/>
 
             ))}
 

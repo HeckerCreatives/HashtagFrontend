@@ -29,6 +29,7 @@ type Props = {
     min: number,
     profit: number,
     isBuyonetakeone: string
+    isActive: string
 
 }
 
@@ -40,7 +41,7 @@ export default function HashbotCard( prop: Props) {
     const [min, setMin] = useState<number | null>(null);
     const [max, setMax] = useState<number | null>(null);
     const [b1t1, setB1t1] = useState(false)
-    const [isChecked, setIsChecked] = useState(false);
+    const [store, setStore] = useState(false);
     
 
     const [loading, setLoading] = useState(false)
@@ -55,7 +56,8 @@ export default function HashbotCard( prop: Props) {
             profit: profit / 100,
             isBuyonetakeone: b1t1 ? '1' : '0',
             minerid: prop.id,
-            duration: duration
+            duration: duration,
+            isActive: store ? '1' : '0'
           },{
             withCredentials: true
           })
@@ -110,21 +112,43 @@ export default function HashbotCard( prop: Props) {
         setMin(prop.min)
         setMax(prop.max)
         setB1t1(prop.isBuyonetakeone === '0' ? false : true)
+        setStore(prop.isActive === '0' ? false : true)
       }
     },[prop])
 
+    const botImg = (data: string) => {
+      if(data === 'Micro Hash'){
+        return '/assets/micro op2.png'
+      } else  if(data === 'Mega Hash'){
+        return '/assets/mega opt2.png'
+      } else  if(data === 'Giga Hash'){
+        return '/assets/giga opt2.png'
+      }else  if(data === 'Tera Hash'){
+        return '/bot/Tera.png'
+      }else  if(data === 'Ulti Hash'){
+        return '/bot/Ulti.png'
+      }else  if(data === 'Hash Care'){
+        return '/bot/Care.png'
+      }
+    }
+
   return (
 
-    <div className=' relative w-full max-w-[350px] flex max-h-auto '>
+    <div className=' relative w-full flex max-h-auto '>
         <div className=' relative w-full  flex flex-col bg-zinc-800 rounded-sm p-6 h-auto'>
             <div className=' relative w-full grid grid-cols-1 gap-4 h-auto'>
                 <div className=' w-full relative flex items-center justify-center'>
-                    {/* <img src={prop.img} alt="" height={50} className='' /> */}
+                    <img src={botImg(prop.name)} alt="" className=' h-[200px]' />
 
                 </div>
 
                 <div className=' w-full flex flex-col gap-1'>
                     <p className=' text-sm font-semibold text-yellow-500'>{prop.name}</p>
+
+                     <div className=' bg-zinc-900 rounded-sm p-2 flex items-center justify-between'>
+                      <label htmlFor="" className=' text-xs'>Available on Store ({store ? 'on' : 'off'})</label>
+                      <Switch checked={store} onCheckedChange={setStore}/>
+                    </div>
 
                     <div className=' bg-zinc-900 rounded-sm p-2 flex items-center justify-between'>
                       <label htmlFor="" className=' text-xs'>Buy one take one ({b1t1 ? 'on' : 'off'})</label>

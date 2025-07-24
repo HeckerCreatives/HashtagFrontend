@@ -282,7 +282,7 @@ export default function page() {
                 <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Hash Bot Wallet'} amount={wallet?.userwallets.minecoinwallet.amount || 0} subtitle={'Total income from hash bot'} text={''} loading={false} editable={false} type={'minecoinwallet'}/>
                 <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Referral Total Earnings'} amount={stats?.referral || 0} subtitle={'Total accumulated commission from direct refferal'} text={''} loading={false} editable={false} type={'directwallet'}/>
                 <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Unilevel Total Earnings'} amount={stats?.unilevel || 0} subtitle={'Total accumulated commission from lvl 2 to lvl 13'} text={''} loading={false} editable={false} type={'unilevelwallet'}/>
-                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Commission Wallet'} amount={(wallet?.userwallets.commissionwallet.amount || 0)} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={false} editable={false} type={'commissionwallet'}/>
+                <ViewCard icon={<Wallet size={30} className=' text-black' />} iconbg={'bg-yellow-500'} title={'Commission Wallet'} amount={(wallet?.userwallets.directwallet.amount || 0) + (wallet?.userwallets.unilevelwallet.amount || 0)} subtitle={'Withdrawable value from direct referral & unilevel'} text={''} loading={false} editable={false} type={'commissionwallet'}/>
                
 
             </div>

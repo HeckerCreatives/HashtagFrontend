@@ -31,7 +31,7 @@ type Props = {
 export default function Productcard(prop: Props) {
     const [slider, setSlider] = useState(0)
     const [val, setVal] = useState('0')
-    const type = prop.name === 'Micro Hash' && 'micro_hash' || prop.name === 'Mega Hash' && 'mega_hash' || prop.name === 'Giga Hash' && 'giga_hash'
+    const type = prop.name === 'Micro Hash' && 'micro_hash' || prop.name === 'Mega Hash' && 'mega_hash' || prop.name === 'Giga Hash' && 'giga_hash' || prop.name === 'Tera Hash' && 'tera_hash' || prop.name === 'Ulti Hash' && 'ulti_hash' || prop.name === 'Hash Care' && 'hash_care'
     const [loading, setLoading] = useState(false)
     const router = useRouter()
     const [dialog, setDialog] = useState(false)

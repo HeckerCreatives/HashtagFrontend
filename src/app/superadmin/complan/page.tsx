@@ -17,6 +17,7 @@ type Miner = {
   min: number
   name: string
   profit: number
+  isActive: string
   }
 
 
@@ -122,13 +123,17 @@ export default function page() {
    
   return (
     <SuperAdminLayout>
-        <div className=" bg-zinc-950 w-full h-full flex flex-col items-center gap-12 p-8">
+        <div className=" bg-zinc-950 w-full h-full flex flex-col items-center justify-center gap-12 p-8">
            
 
-           <div className=' w-full max-w-[1740px] flex items-center flex-wrap gap-4'>
-            <HashbotCard id={micro?.id || ''} name={'Micro Hash'} profit={(micro?.profit || 0) * 100} duration={micro?.duration || 0} img={'/assets/micro op2.png'} size={'140'} max={micro?.max || 0} min={micro?.min || 0} isBuyonetakeone={micro?.isBuyonetakeone || ''}/>
+           <div className=' w-full max-w-[1740px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+            {list.map((item, index) => (
+            <HashbotCard key={index} id={item?.id || ''} name={item.name} profit={(item?.profit || 0) * 100} duration={item?.duration || 0} img={'/assets/micro op2.png'} size={'140'} max={item?.max || 0} min={item?.min || 0} isBuyonetakeone={item?.isBuyonetakeone || ''} isActive={item?.isActive}/>
+
+            ))}
+            {/* <HashbotCard id={micro?.id || ''} name={'Micro Hash'} profit={(micro?.profit || 0) * 100} duration={micro?.duration || 0} img={'/assets/micro op2.png'} size={'140'} max={micro?.max || 0} min={micro?.min || 0} isBuyonetakeone={micro?.isBuyonetakeone || ''}/>
             <HashbotCard id={mega?.id || ''} name={'Mega Hash'} profit={(mega?.profit || 0) * 100} duration={mega?.duration || 0} img={'/assets/mega opt2.png'} size={'120'} max={mega?.max || 0} min={mega?.min || 0} isBuyonetakeone={mega?.isBuyonetakeone || ''}/>
-            <HashbotCard id={giga?.id || ''} name={'Giga Hash'} profit={(giga?.profit || 0) * 100} duration={giga?.duration || 0} img={'/assets/giga opt2.png'} size={'110'} max={giga?.max || 0} min={giga?.min || 0} isBuyonetakeone={giga?.isBuyonetakeone || ''}/>
+            <HashbotCard id={giga?.id || ''} name={'Giga Hash'} profit={(giga?.profit || 0) * 100} duration={giga?.duration || 0} img={'/assets/giga opt2.png'} size={'110'} max={giga?.max || 0} min={giga?.min || 0} isBuyonetakeone={giga?.isBuyonetakeone || ''}/> */}
            </div>
         </div>
     </SuperAdminLayout>

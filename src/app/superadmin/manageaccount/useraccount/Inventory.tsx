@@ -46,6 +46,7 @@ export default function Inventory() {
     const [currentpage, setCurrentpage] = useState(0)
     const [matureLoading, setMatureLoading] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
+    const [botid, setBotid] = useState('')
 
     useEffect(() => {
         setLoading(true)
@@ -78,7 +79,7 @@ export default function Inventory() {
         setCurrentpage(page)
     }
 
-    const matureBot = async (botid: string) => {
+    const matureBot = async () => {
       try{
 
         setMatureLoading(true)
@@ -113,6 +114,8 @@ export default function Inventory() {
         }
 
         getWallets()
+                  toast.success('Success');
+
 
         setModalOpen(false)
         setMatureLoading(false)
@@ -215,11 +218,11 @@ export default function Inventory() {
                     )}
                   />
                   </TableCell>
-                  <TableCell className=' text-center'>{item.type == "micro_hash" ? "Micro Hash" : item.type == "mega_hash" ? "Mega Hash" : item.type == "giga_hash" ? "Giga Hash" : ""}</TableCell>
+                  <TableCell className=' text-center'>{item.type == "micro_hash" ? "Micro Hash" : item.type == "mega_hash" ? "Mega Hash" : item.type == "giga_hash" ? "Giga Hash" : item.type == "tera_hash" ? "Tera Hash" : item.type == "ulti_hash"  ? "Ulti Hash" : item.type == "hash_care"  ? "Hash Care" : "" }</TableCell>
                   <TableCell className=' text-center flex items-center gap-2'>
                   <Dialog open={modalOpen} onOpenChange={setModalOpen}>
                     <DialogTrigger disabled={matureLoading || item.remainingtime <= 0}>
-                        <Button onClick={() => setModalOpen(true)} className="inline-flex items-center" disabled={matureLoading || item.remainingtime <= 0}>
+                        <Button onClick={() => {setModalOpen(true), setBotid(item.minerid)}} className="inline-flex items-center" disabled={matureLoading || item.remainingtime <= 0}>
                         {matureLoading ? (
                             <Spinner />
                           ) : (
@@ -239,7 +242,7 @@ export default function Inventory() {
                         </DialogDescription>
                       </DialogHeader>
                       <Button className="inline-flex items-center" onClick={() => 
-                          matureBot(item.minerid)
+                          matureBot()
                       } disabled={matureLoading}>
                       {matureLoading ? (
                           <Spinner />

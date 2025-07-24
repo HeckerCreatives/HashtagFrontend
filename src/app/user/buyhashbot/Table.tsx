@@ -95,7 +95,7 @@ export default function PurchaseHistoryTable() {
               <TableRow key={index}>
                 <TableCell className="text-center">{new Date(item.createdAt).toDateString()}</TableCell>
                 <TableCell className=' text-center'>₱ {item.amount.toLocaleString()}</TableCell>
-                <TableCell className=' text-center'>{item.minertype === 'micro_hash' && 'Micro Hash' || item.minertype === 'mega_hash' && 'Mega Hash' || item.minertype === 'giga_hash' && 'Giga Hash'}</TableCell>
+                <TableCell className=' text-center'>{item.minertype === 'micro_hash' && 'Micro Hash' || item.minertype === 'mega_hash' && 'Mega Hash' || item.minertype === 'giga_hash' && 'Giga Hash' || item.minertype === 'tera_hash' && 'Tera Hash' || item.minertype === 'ulti_hash' && 'Ulti Hash' || item.minertype === 'hash_care' && 'Hash Care'}</TableCell>
               </TableRow>
             ))}
             </>
